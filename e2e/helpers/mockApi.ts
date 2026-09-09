@@ -2,7 +2,7 @@ import type { Page, Route } from "@playwright/test"
 // Reuse the app's own deterministic mock-data generator so test fixtures stay
 // in sync with the real API shape. stubs.ts is pure (only depends on date-fns),
 // so it imports cleanly into the Playwright (node) context.
-import { getStub } from "../../src/api/stubs"
+import { getStub } from "../../src/shared/api/stubs"
 
 export interface MockApiOptions {
   /** When false, `/auth/me` responds 401 so the app treats the user as a guest. */
@@ -101,8 +101,8 @@ export async function mockApi(page: Page, options: MockApiOptions = {}): Promise
   await skipTourHint(page)
 
   // Match only real API calls (path starts with `/api/`). A glob like `**/api/**`
-  // would also swallow Vite's own source modules served from `/src/api/*`.
-  const isApiRequest = (url: string) => new URL(url).pathname.startsWith("/api/")
+  // would also swallow Vite's own source modules served from `/src/shared/api/*`.
+  const isApiRequest = (url: URL) => url.pathname.startsWith("/api/")
 
   await page.route(isApiRequest, async (route: Route) => {
     const request = route.request()

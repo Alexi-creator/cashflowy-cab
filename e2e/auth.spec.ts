@@ -44,7 +44,7 @@ test.describe("Authentication", () => {
     await blockThirdParty(page)
 
     let authenticated = false
-    const isApiRequest = (url: string) => new URL(url).pathname.startsWith("/api/")
+    const isApiRequest = (url: URL) => url.pathname.startsWith("/api/")
     await page.route(isApiRequest, async (route) => {
       const path = new URL(route.request().url()).pathname
       if (path.endsWith("/auth/login")) {

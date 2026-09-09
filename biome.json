@@ -16,7 +16,13 @@
     "lineWidth": 100,
     "lineEnding": "lf"
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -83,6 +89,101 @@
         "rules": {
           "correctness": {
             "noUnusedVariables": "error"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/shared/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": [
+                      "@/app",
+                      "@/app/**",
+                      "@/pages",
+                      "@/pages/**",
+                      "@/modules",
+                      "@/modules/**"
+                    ],
+                    "message": "shared is the bottom layer: it knows nothing about modules, pages or routing. Invert the dependency instead (see shared/api/session.ts)"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/modules/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["@/app", "@/app/**", "@/pages", "@/pages/**"],
+                    "message": "modules depend only on shared and other modules: pages compose modules, never the reverse"
+                  },
+                  {
+                    "group": ["@/modules/*/ui/*", "@/modules/*/ui/*/**"],
+                    "message": "the ui segment is imported only through its index: @/modules/<name>/ui. Inside your own slice use relative paths (./ and ../)"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/pages/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["@/app", "@/app/**"],
+                    "message": "pages do not depend on the composition layer"
+                  },
+                  {
+                    "group": ["@/modules/*/ui/*", "@/modules/*/ui/*/**"],
+                    "message": "the ui segment is imported only through its index: @/modules/<name>/ui. Inside your own slice use relative paths (./ and ../)"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/app/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["@/modules/*/ui/*", "@/modules/*/ui/*/**"],
+                    "message": "the ui segment is imported only through its index: @/modules/<name>/ui. Inside your own slice use relative paths (./ and ../)"
+                  }
+                ]
+              }
+            }
           }
         }
       }

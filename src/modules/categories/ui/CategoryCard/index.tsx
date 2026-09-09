@@ -1,0 +1,153 @@
+import { ActionIcon, Box, Group, Paper, Progress, Stack, Text, Tooltip } from "@mantine/core"
+import { IconEdit, IconPlus, IconReceipt, IconTrash } from "@tabler/icons-react"
+import { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
+import { RouteNames } from "@/shared/config/routeNames"
+import { formatCurrency } from "@/shared/lib/formatCurrency"
+import { baseAmount } from "../../lib/helpers"
+import type { DisplayCategory } from "../../model"
+
+interface Props {
+  cat: DisplayCategory
+  /** Maximum total (in the base currency) among categories — for normalizing the bar. */
+  maxSpent: number
+  isExpense: boolean
+  onEdit: () => void
+  onDelete: () => void
+  /** Quickly create a transaction for this category */
+  onAdd: () => void
+}
+
+/** Category card: icon, name, transaction count, total, and a bar of the share of the maximum. */
+export function CategoryCard({ cat, maxSpent, isExpense, onEdit, onDelete, onAdd }: Props) {
+  const { t, i18n } = useTranslation()
+  const language = i18n.language
+  const [hovered, setHovered] = useState(false)
+
+  const comparable = baseAmount(cat)
+  const pct = comparable > 0 ? (comparable / maxSpent) * 100 : 0
+  const sign = isExpense ? "−" : "+"
+  const empty = cat.totals.length === 0
+  const multiCurrency = cat.totals.length > 1
+
+  // main total: a single currency — exact; several — converted to the base ("≈")
+  let headline: string
+  if (empty) {
+    headline = formatCurrency(0, language, cat.baseCurrency)
+  } else if (multiCurrency) {
+    headline =
+      cat.approxTotal != null
+        ? `≈ ${sign}${formatCurrency(cat.approxTotal, language, cat.baseCurrency)}`
+        : "—"
+  } else {
+    headline = `${sign}${formatCurrency(cat.totals[0].total, language, cat.totals[0].currency)}`
+  }
+
+  return (
+    <Paper
+      p="md"
+      pb="sm"
+      pos="relative"
+      style={{ overflow: "hidden" }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <Group gap={4} pos="absolute" top={8} right={8} wrap="nowrap">
+        {/* edit/delete — only on hover; adding a transaction is always visible */}
+        <Group
+          gap={4}
+          wrap="nowrap"
+          style={{ opacity: hovered ? 1 : 0, transition: "opacity .15s" }}
+        >
+          <Tooltip label={t("categories.tx_tooltip")}>
+            <ActionIcon
+              component={Link}
+              to={`${RouteNames.Transactions}?type=${isExpense ? "expense" : "income"}&categoryId=${cat.id}`}
+              variant="subtle"
+              size="sm"
+              color="gray"
+            >
+              <IconReceipt size={14} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip label={t("common.change")}>
+            <ActionIcon variant="subtle" size="sm" color="gray" onClick={onEdit}>
+              <IconEdit size={14} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip label={t("common.delete")}>
+            <ActionIcon variant="subtle" size="sm" color="gray" onClick={onDelete}>
+              <IconTrash size={14} />
+            </ActionIcon>
+          </Tooltip>
+        </Group>
+        <Tooltip label={isExpense ? t("categories.add_expense") : t("categories.add_income")}>
+          <ActionIcon variant="light" size="sm" color="lime" onClick={onAdd}>
+            <IconPlus size={14} />
+          </ActionIcon>
+        </Tooltip>
+      </Group>
+
+      <Group gap="sm">
+        {cat.icon && (
+          <Box
+            w={44}
+            h={44}
+            fz={20}
+            style={{
+              borderRadius: 12,
+              background: `color-mix(in oklab, ${cat.color} 22%, var(--mantine-color-default-hover))`,
+              border: `1px solid color-mix(in oklab, ${cat.color} 30%, transparent)`,
+              display: "grid",
+              placeItems: "center",
+              flexShrink: 0,
+            }}
+          >
+            {cat.icon}
+          </Box>
+        )}
+        <Stack gap={2} style={{ minWidth: 0, flex: 1 }}>
+          <Text fw={500} truncate>
+            {cat.name}
+          </Text>
+          <Text ff="monospace" size="xs" c="dimmed">
+            {t("common.tx_count", { count: cat.count })}
+          </Text>
+        </Stack>
+      </Group>
+
+      <Stack gap={6} mt="md">
+        <Group justify="space-between" align="baseline" wrap="nowrap">
+          <Text size="xs" c="dimmed">
+            {t("categories.all_time")}
+          </Text>
+          <Text
+            ff="monospace"
+            size="sm"
+            fw={500}
+            ta="right"
+            c={empty ? "dimmed" : isExpense ? undefined : "green.5"}
+          >
+            {headline}
+          </Text>
+        </Group>
+        {multiCurrency && (
+          <Text ff="monospace" size="xs" c="dimmed" ta="right">
+            {cat.totals.map((t) => formatCurrency(t.total, language, t.currency)).join(" · ")}
+          </Text>
+        )}
+        <Progress
+          value={pct}
+          size={3}
+          pos="absolute"
+          bottom={0}
+          left={0}
+          right={0}
+          radius={0}
+          styles={{ section: { background: cat.color } }}
+        />
+      </Stack>
+    </Paper>
+  )
+}
