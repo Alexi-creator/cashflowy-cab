@@ -155,7 +155,9 @@
     "add_transaction": "Transakcija",
     "add_transaction_desc": "prihodek / odhodek",
     "add_goal": "Cilj",
-    "add_goal_desc": "varčevanje"
+    "add_goal_desc": "varčevanje",
+    "add_exchange": "Menjava",
+    "add_exchange_desc": "valuta v valuto"
   },
   "notifications": {
     "mark_all_read": "Označi vse kot prebrano",
@@ -224,7 +226,11 @@
     "tour_goals_title": "Vaši cilji",
     "tour_goals_desc": "Tukaj spremljajte napredek pri svojih varčevalnih ciljih.",
     "tour_transactions_title": "Nedavne transakcije",
-    "tour_transactions_desc": "Hiter dostop do vaših najnovejših transakcij."
+    "tour_transactions_desc": "Hiter dostop do vaših najnovejših transakcij.",
+    "tour_balance_title": "Stanje in valute",
+    "tour_balance_desc": "Če zaslužite v eni valuti in trošite v drugi, zabeležite menjavo — stanje bo tako ostalo natančno. Menjava ni prihodek ne odhodek: le premakne denar med vašimi valutami.",
+    "balance_missing_exchange": "Stanje v {{currency}} je negativno, v drugih valutah pa ne — videti je, da manjka menjava.",
+    "balance_record_exchange": "Zabeleži"
   },
   "alerts": {
     "account_needs_email": "Prijavili ste se prek Telegrama. V nastavitvah dodajte e-pošto in geslo, da ne izgubite dostopa do računa.",
@@ -393,7 +399,11 @@
     "tab_goal": "Cilj",
     "no_categories_expense": "Ni kategorij odhodkov.",
     "no_categories_income": "Ni kategorij prihodkov.",
-    "save_transaction": "Shrani transakcijo"
+    "save_transaction": "Shrani transakcijo",
+    "title_exchange": "Menjava valute",
+    "sub_exchange": "Premakne denar med vašimi valutami — ni prihodek in ni odhodek",
+    "tab_exchange": "Menjava",
+    "save_exchange": "Shrani menjavo"
   },
   "goal_form": {
     "icon": "Ikona",
@@ -477,6 +487,28 @@
     "tour_summary_desc": "Skupaj prihranjeno pri vseh vaših ciljih in koliko še ostaja.",
     "tour_cards_title": "Vaši cilji",
     "tour_cards_desc": "Tukaj vplačujte, dvigujte ali preverite zgodovino vplačil za vsak cilj."
+  },
+  "exchanges": {
+    "section_title": "Menjave valut",
+    "add": "Dodaj menjavo",
+    "empty": "Ni zabeleženih menjav",
+    "gave": "Dano",
+    "got": "Prejeto",
+    "same_currency": "Izberite dve različni valuti",
+    "not_a_transaction": "Menjava ni prihodek ne odhodek: denar se le premakne med vašimi valutami, poročila ostanejo nespremenjena.",
+    "note_placeholder": "Kje ste menjali — banka, menjalnica, aplikacija",
+    "saved": "Menjava shranjena",
+    "save_error": "Menjave ni bilo mogoče shraniti",
+    "delete_title": "Izbriši menjavo",
+    "delete_confirm": "Izbrišem to menjavo? Denar se bo vrnil v izvorno valuto.",
+    "delete_success": "Menjava izbrisana",
+    "holdings": "Po vaših zapisih",
+    "tab": "Menjava",
+    "subtitle": "Denar, premaknjen med vašimi valutami",
+    "tour_tab_title": "Menjave valut",
+    "tour_tab_desc": "Menjujete eno valuto v drugo? Zabeležite to tukaj. Menjava ne gre med prihodke in odhodke, a ohrani stanje po valutah natančno.",
+    "tour_list_title": "Samo menjave",
+    "tour_list_desc": "Vsaka vrstica pove, koliko ste dali in koliko ste dejansko prejeli. Ob napaki popravite ali izbrišite kar v vrstici."
   },
   "investments": {
     "title": "Naložbe in kripto",

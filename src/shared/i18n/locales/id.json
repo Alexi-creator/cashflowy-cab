@@ -152,7 +152,9 @@
     "add_transaction": "Transaksi",
     "add_transaction_desc": "pemasukan / pengeluaran",
     "add_goal": "Tujuan",
-    "add_goal_desc": "tabungan"
+    "add_goal_desc": "tabungan",
+    "add_exchange": "Tukar",
+    "add_exchange_desc": "mata uang ke mata uang"
   },
   "notifications": {
     "mark_all_read": "Tandai semua sudah dibaca",
@@ -218,7 +220,11 @@
     "tour_goals_title": "Tujuan Anda",
     "tour_goals_desc": "Pantau kemajuan menuju tujuan tabungan Anda di sini.",
     "tour_transactions_title": "Transaksi terbaru",
-    "tour_transactions_desc": "Akses cepat ke transaksi terbaru Anda."
+    "tour_transactions_desc": "Akses cepat ke transaksi terbaru Anda.",
+    "tour_balance_title": "Saldo dan mata uang",
+    "tour_balance_desc": "Jika Anda menerima dalam satu mata uang dan membelanjakan dalam mata uang lain, catat penukarannya — dengan begitu saldo tetap akurat. Penukaran bukan pemasukan dan bukan pengeluaran: ia hanya memindahkan uang antar mata uang Anda.",
+    "balance_missing_exchange": "Saldo {{currency}} Anda negatif sementara mata uang lain tidak — sepertinya ada penukaran yang belum dicatat.",
+    "balance_record_exchange": "Catat"
   },
   "alerts": {
     "account_needs_email": "Anda masuk lewat Telegram. Tambahkan email dan kata sandi di pengaturan agar tidak kehilangan akses ke akun Anda.",
@@ -360,7 +366,11 @@
     "tab_goal": "Tujuan",
     "no_categories_expense": "Tidak ada kategori pengeluaran.",
     "no_categories_income": "Tidak ada kategori pemasukan.",
-    "save_transaction": "Simpan transaksi"
+    "save_transaction": "Simpan transaksi",
+    "title_exchange": "Tukar mata uang",
+    "sub_exchange": "Memindahkan uang antar mata uang Anda — bukan pemasukan dan bukan pengeluaran",
+    "tab_exchange": "Tukar",
+    "save_exchange": "Simpan penukaran"
   },
   "goal_form": {
     "icon": "Ikon",
@@ -441,6 +451,28 @@
     "tour_summary_desc": "Total tabungan di semua tujuan Anda dan berapa yang tersisa.",
     "tour_cards_title": "Tujuan Anda",
     "tour_cards_desc": "Setor, tarik, atau lihat riwayat kontribusi untuk setiap tujuan di sini."
+  },
+  "exchanges": {
+    "section_title": "Penukaran mata uang",
+    "add": "Tambah penukaran",
+    "empty": "Belum ada penukaran yang dicatat",
+    "gave": "Diberikan",
+    "got": "Diterima",
+    "same_currency": "Pilih dua mata uang yang berbeda",
+    "not_a_transaction": "Penukaran bukan pemasukan dan bukan pengeluaran: uang hanya berpindah antar mata uang Anda, laporan tidak berubah.",
+    "note_placeholder": "Tempat menukar — bank, money changer, aplikasi",
+    "saved": "Penukaran disimpan",
+    "save_error": "Penukaran gagal disimpan",
+    "delete_title": "Hapus penukaran",
+    "delete_confirm": "Hapus penukaran ini? Uang akan kembali ke mata uang asalnya.",
+    "delete_success": "Penukaran dihapus",
+    "holdings": "Menurut catatan Anda",
+    "tab": "Tukar",
+    "subtitle": "Uang yang dipindahkan antar mata uang Anda",
+    "tour_tab_title": "Penukaran mata uang",
+    "tour_tab_desc": "Menukar satu mata uang ke mata uang lain? Catat di sini. Penukaran tidak masuk ke pemasukan dan pengeluaran, tetapi menjaga saldo tiap mata uang tetap akurat.",
+    "tour_list_title": "Hanya penukaran",
+    "tour_list_desc": "Setiap baris menunjukkan berapa yang Anda serahkan dan berapa yang benar-benar diterima. Jika keliru, perbaiki atau hapus langsung di barisnya."
   },
   "investments": {
     "title": "Investasi dan kripto",

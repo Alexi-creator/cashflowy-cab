@@ -1,5 +1,5 @@
 // TODO(asset): temporarily hidden (form under development) — restore IconChartLine and the "Asset" option below
-import { IconCreditCard, IconTarget } from "@tabler/icons-react"
+import { IconArrowsExchange, IconCreditCard, IconTarget } from "@tabler/icons-react"
 import type { TFunction } from "i18next"
 import type { ComponentProps } from "react"
 import { useModalStore } from "@/shared/store/modalStore"
@@ -25,6 +25,12 @@ export const getAddOptions = (t: TFunction): SelectButtonOption[] => [
     description: t("header.add_goal_desc"),
     icon: <IconTarget size={16} />,
     onClick: () => openAdd("goal"),
+  },
+  {
+    label: t("header.add_exchange"),
+    description: t("header.add_exchange_desc"),
+    icon: <IconArrowsExchange size={16} />,
+    onClick: () => openAdd("exchange"),
   },
   // TODO(asset): temporarily hidden (form under development) — restore the "Asset" option
   // {

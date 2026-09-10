@@ -1,4 +1,5 @@
 import type { TFunction } from "i18next"
+import type { ReactNode } from "react"
 import { formatCurrency } from "@/shared/lib/formatCurrency"
 
 export interface Kpi {
@@ -7,6 +8,9 @@ export interface Kpi {
   label: string
   value: string
   sub?: string
+  /** Rendered among the card's top-right controls — used for the "an exchange looks unrecorded"
+   *  marker, which must not make the card taller than its neighbours. */
+  alert?: ReactNode
   trend?: number
   accent?: string
   /** Shows a skeleton instead of the card while data is loading. */
@@ -34,6 +38,10 @@ export interface BalanceMetric {
   usd: number | null
   /** Base currency of the balance (may differ from the summaries' currency). */
   baseCurrency?: string
+  /** Exact per-currency figures behind `total` — no conversion involved in any of them. */
+  byCurrency?: { currency: string; amount: number }[]
+  /** Whether `total` required converting a foreign holding at today's rate. */
+  isApproximate?: boolean
   loading: boolean
 }
 
@@ -45,13 +53,33 @@ interface BuildKpisParams {
   balance: BalanceMetric
   income: KpiMetric
   expense: KpiMetric
+  /** Marker for the balance card when something about the balance needs explaining. */
+  balanceAlert?: ReactNode
 }
 
-/** Value color by sign: negative (leading "−"/"-") — red, otherwise green. */
-function colorBySign(value: string): string {
-  const v = value.trimStart()
-  const negative = v.startsWith("−") || v.startsWith("-")
-  return negative ? "var(--mantine-color-red-5)" : "var(--mantine-color-green-5)"
+/**
+ * The currency whose balance looks impossible, or null when nothing is off.
+ *
+ * A per-currency balance cannot genuinely go negative — you can't spend more of a currency than
+ * ever came in. Negative here, next to a positive balance in another currency, is the signature
+ * of money that was converted without the exchange being recorded.
+ */
+export function findUnrecordedExchange(
+  byCurrency: { currency: string; amount: number }[] | undefined,
+): string | null {
+  const rows = byCurrency ?? []
+  const negative = rows.filter((c) => c.amount < 0)
+  if (negative.length === 0 || !rows.some((c) => c.amount > 0)) return null
+  // Name the currency furthest into the red — the one actually being spent.
+  return negative.reduce((worst, c) => (c.amount < worst.amount ? c : worst)).currency
+}
+
+/**
+ * Value color by sign: negative — red, otherwise green. Read off the number rather than the
+ * formatted string, which carries prefixes ("≈ ") and locale-dependent symbol placement.
+ */
+function colorBySign(value: number): string {
+  return value < 0 ? "var(--mantine-color-red-5)" : "var(--mantine-color-green-5)"
 }
 
 /** Builds the home KPI card array from static values and income/expense metrics. */
@@ -62,6 +90,7 @@ export function buildKpis({
   balance,
   income,
   expense,
+  balanceAlert,
 }: BuildKpisParams): Kpi[] {
   // saved for the month = income − expense (in the base currency)
   const savedLoading = income.loading || expense.loading
@@ -70,16 +99,26 @@ export function buildKpis({
     ? "—"
     : `${savedTotal >= 0 ? "+" : "−"}${formatCurrency(Math.abs(savedTotal), language, baseCurrency)}`
 
-  // the balance comes in its own base currency; null (no rates) → "—"
+  // The balance comes in its own base currency; null (no rates) → "—". A total that had to
+  // convert a foreign holding is an estimate and says so.
   const balanceValue =
     balance.loading || balance.total == null
       ? "—"
-      : formatCurrency(balance.total, language, balance.baseCurrency)
-  // under the value — the USD equivalent; if rates are unavailable, keep the default caption
-  const balanceSub =
-    !balance.loading && balance.usd != null
-      ? `≈ ${formatCurrency(balance.usd, language, "USD")}`
-      : t("home.kpi_balance_sub_all")
+      : `${balance.isApproximate ? "≈ " : ""}${formatCurrency(balance.total, language, balance.baseCurrency)}`
+
+  // Under the value: what is actually held in each currency — the figures that answer "how much
+  // have I not converted yet". Shown only while every bucket is plausible; a negative one means
+  // some of that foreign money is already spent and the split would be fiction, so the card falls
+  // back to the USD equivalent and the hint below explains what to record.
+  const held = (balance.byCurrency ?? []).filter((c) => c.amount !== 0)
+  const splitIsTrustworthy = held.length > 1 && findUnrecordedExchange(balance.byCurrency) === null
+  const balanceSub = balance.loading
+    ? t("home.kpi_balance_sub_all")
+    : splitIsTrustworthy
+      ? held.map((c) => formatCurrency(c.amount, language, c.currency)).join("  +  ")
+      : balance.usd != null
+        ? `≈ ${formatCurrency(balance.usd, language, "USD")}`
+        : t("home.kpi_balance_sub_all")
 
   return [
     {
@@ -87,7 +126,8 @@ export function buildKpis({
       label: t("home.kpi_balance"),
       value: balanceValue,
       sub: balanceSub,
-      accent: balance.total != null ? colorBySign(balanceValue) : undefined,
+      alert: balanceAlert,
+      accent: balance.total != null ? colorBySign(balance.total) : undefined,
       loading: balance.loading,
     },
     {
@@ -115,7 +155,7 @@ export function buildKpis({
       label: t("home.kpi_saved"),
       value: savedValue,
       sub: t("home.kpi_saved_sub"),
-      accent: savedLoading ? undefined : colorBySign(savedValue),
+      accent: savedLoading ? undefined : colorBySign(savedTotal),
       loading: savedLoading,
     },
   ]

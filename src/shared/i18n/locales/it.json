@@ -153,7 +153,9 @@
     "add_transaction": "Transazione",
     "add_transaction_desc": "entrata / uscita",
     "add_goal": "Obiettivo",
-    "add_goal_desc": "risparmio"
+    "add_goal_desc": "risparmio",
+    "add_exchange": "Cambio",
+    "add_exchange_desc": "da valuta a valuta"
   },
   "notifications": {
     "mark_all_read": "Segna tutto come letto",
@@ -220,7 +222,11 @@
     "tour_goals_title": "I tuoi obiettivi",
     "tour_goals_desc": "Monitora qui i progressi verso i tuoi obiettivi di risparmio.",
     "tour_transactions_title": "Transazioni recenti",
-    "tour_transactions_desc": "Accesso rapido alle tue transazioni più recenti."
+    "tour_transactions_desc": "Accesso rapido alle tue transazioni più recenti.",
+    "tour_balance_title": "Saldo e valute",
+    "tour_balance_desc": "Se guadagni in una valuta e spendi in un'altra, registra il cambio: così il saldo resta esatto. Un cambio non è un'entrata né un'uscita, sposta solo denaro tra le tue valute.",
+    "balance_missing_exchange": "Il saldo in {{currency}} è negativo mentre le altre valute no — sembra mancare un cambio.",
+    "balance_record_exchange": "Registra"
   },
   "alerts": {
     "account_needs_email": "Hai effettuato l'accesso tramite Telegram. Aggiungi email e password nelle impostazioni per non perdere l'accesso al tuo account.",
@@ -371,7 +377,11 @@
     "tab_goal": "Obiettivo",
     "no_categories_expense": "Nessuna categoria di uscite.",
     "no_categories_income": "Nessuna categoria di entrate.",
-    "save_transaction": "Salva transazione"
+    "save_transaction": "Salva transazione",
+    "title_exchange": "Cambio valuta",
+    "sub_exchange": "Sposta denaro tra le tue valute — non è un'entrata né un'uscita",
+    "tab_exchange": "Cambio",
+    "save_exchange": "Salva cambio"
   },
   "goal_form": {
     "icon": "Icona",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Totale risparmiato su tutti i tuoi obiettivi e quanto manca.",
     "tour_cards_title": "I tuoi obiettivi",
     "tour_cards_desc": "Deposita, preleva o controlla qui la cronologia dei contributi per ogni obiettivo."
+  },
+  "exchanges": {
+    "section_title": "Cambi valuta",
+    "add": "Aggiungi cambio",
+    "empty": "Nessun cambio registrato",
+    "gave": "Dato",
+    "got": "Ricevuto",
+    "same_currency": "Scegli due valute diverse",
+    "not_a_transaction": "Un cambio non è un'entrata né un'uscita: il denaro si sposta solo tra le tue valute, i report restano invariati.",
+    "note_placeholder": "Dove hai cambiato — banca, cambiavalute, app",
+    "saved": "Cambio salvato",
+    "save_error": "Impossibile salvare il cambio",
+    "delete_title": "Elimina cambio",
+    "delete_confirm": "Eliminare questo cambio? Il denaro tornerà nella valuta di partenza.",
+    "delete_success": "Cambio eliminato",
+    "holdings": "Secondo le tue registrazioni",
+    "tab": "Cambio",
+    "subtitle": "Denaro spostato tra le tue valute",
+    "tour_tab_title": "Cambi valuta",
+    "tour_tab_desc": "Converti una valuta in un'altra? Registralo qui. Un cambio resta fuori da entrate e uscite, ma mantiene esatto il saldo di ogni valuta.",
+    "tour_list_title": "Solo cambi",
+    "tour_list_desc": "Ogni riga mostra quanto hai dato e quanto hai davvero ricevuto. Se hai sbagliato, correggi o elimina direttamente nella riga."
   },
   "investments": {
     "title": "Investimenti e crypto",

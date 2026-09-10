@@ -153,7 +153,9 @@
     "add_transaction": "Transaction",
     "add_transaction_desc": "income / expense",
     "add_goal": "Goal",
-    "add_goal_desc": "savings"
+    "add_goal_desc": "savings",
+    "add_exchange": "Exchange",
+    "add_exchange_desc": "currency to currency"
   },
   "notifications": {
     "mark_all_read": "Mark all as read",
@@ -221,7 +223,11 @@
     "tour_goals_title": "Your goals",
     "tour_goals_desc": "Track progress toward your savings goals here.",
     "tour_transactions_title": "Recent transactions",
-    "tour_transactions_desc": "Quick access to your latest transactions."
+    "tour_transactions_desc": "Quick access to your latest transactions.",
+    "tour_balance_title": "Balance and currencies",
+    "tour_balance_desc": "If you earn in one currency and spend in another, record the exchange — then the balance stays exact. An exchange is not an income or an expense: it only moves money between your currencies.",
+    "balance_missing_exchange": "Your {{currency}} balance is negative while other currencies are not — an exchange looks unrecorded.",
+    "balance_record_exchange": "Record it"
   },
   "tour": {
     "start": "Show tour",
@@ -396,7 +402,11 @@
     "tab_goal": "Goal",
     "no_categories_expense": "No expense categories yet.",
     "no_categories_income": "No income categories yet.",
-    "save_transaction": "Save transaction"
+    "save_transaction": "Save transaction",
+    "title_exchange": "Currency exchange",
+    "sub_exchange": "Moves money between your currencies — not an income or an expense",
+    "tab_exchange": "Exchange",
+    "save_exchange": "Save exchange"
   },
   "goal_form": {
     "icon": "Icon",
@@ -478,6 +488,28 @@
     "tour_summary_desc": "Total saved across all your goals and how much is left.",
     "tour_cards_title": "Your goals",
     "tour_cards_desc": "Deposit, withdraw, or check the contribution history for each goal here."
+  },
+  "exchanges": {
+    "section_title": "Currency exchanges",
+    "add": "Add exchange",
+    "empty": "No exchanges recorded yet",
+    "gave": "Gave",
+    "got": "Got",
+    "same_currency": "Choose two different currencies",
+    "not_a_transaction": "An exchange is neither an income nor an expense: the money only moves between your currencies, so your reports stay untouched.",
+    "note_placeholder": "Where you exchanged — bank, exchange counter, app",
+    "saved": "Exchange saved",
+    "save_error": "Could not save the exchange",
+    "delete_title": "Delete exchange",
+    "delete_confirm": "Delete this exchange? The money will go back to the currency it came from.",
+    "delete_success": "Exchange deleted",
+    "holdings": "Your records show",
+    "tab": "Exchange",
+    "subtitle": "Money moved between your currencies",
+    "tour_tab_title": "Currency exchanges",
+    "tour_tab_desc": "Converting one currency into another? Record it here. An exchange stays out of income and expenses, but keeps your per-currency balance exact.",
+    "tour_list_title": "Exchanges only",
+    "tour_list_desc": "Each row is what you handed over and what you actually received. Fix or remove one right in the row if you got it wrong."
   },
   "investments": {
     "title": "Investments and crypto",

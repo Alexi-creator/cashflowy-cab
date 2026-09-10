@@ -153,7 +153,9 @@
     "add_transaction": "Transactie",
     "add_transaction_desc": "inkomst / uitgave",
     "add_goal": "Doel",
-    "add_goal_desc": "sparen"
+    "add_goal_desc": "sparen",
+    "add_exchange": "Wissel",
+    "add_exchange_desc": "valuta naar valuta"
   },
   "notifications": {
     "mark_all_read": "Alles als gelezen markeren",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Uw doelen",
     "tour_goals_desc": "Volg hier de voortgang van uw spaardoelen.",
     "tour_transactions_title": "Recente transacties",
-    "tour_transactions_desc": "Snelle toegang tot uw meest recente transacties."
+    "tour_transactions_desc": "Snelle toegang tot uw meest recente transacties.",
+    "tour_balance_title": "Saldo en valuta's",
+    "tour_balance_desc": "Verdien je in de ene valuta en geef je uit in de andere, leg de wissel dan vast — zo blijft het saldo exact. Een wissel is geen inkomst en geen uitgave: het verplaatst alleen geld tussen je valuta's.",
+    "balance_missing_exchange": "Je saldo in {{currency}} is negatief terwijl andere valuta's dat niet zijn — er lijkt een wissel te ontbreken.",
+    "balance_record_exchange": "Vastleggen"
   },
   "alerts": {
     "account_needs_email": "Je bent ingelogd via Telegram. Voeg een e-mailadres en wachtwoord toe in de instellingen om de toegang tot je account niet te verliezen.",
@@ -371,7 +377,11 @@
     "tab_goal": "Doel",
     "no_categories_expense": "Geen uitgavencategorieën.",
     "no_categories_income": "Geen inkomstencategorieën.",
-    "save_transaction": "Transactie opslaan"
+    "save_transaction": "Transactie opslaan",
+    "title_exchange": "Valutawissel",
+    "sub_exchange": "Verplaatst geld tussen je valuta's — geen inkomst en geen uitgave",
+    "tab_exchange": "Wissel",
+    "save_exchange": "Wissel opslaan"
   },
   "goal_form": {
     "icon": "Pictogram",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Totaal gespaard over al uw doelen en hoeveel er nog resteert.",
     "tour_cards_title": "Uw doelen",
     "tour_cards_desc": "Stort, neem op of bekijk hier de bijdragegeschiedenis voor elk doel."
+  },
+  "exchanges": {
+    "section_title": "Valutawissels",
+    "add": "Wissel toevoegen",
+    "empty": "Nog geen wissels vastgelegd",
+    "gave": "Gegeven",
+    "got": "Ontvangen",
+    "same_currency": "Kies twee verschillende valuta's",
+    "not_a_transaction": "Een wissel is geen inkomst en geen uitgave: het geld verhuist alleen tussen je valuta's, je rapportages blijven ongewijzigd.",
+    "note_placeholder": "Waar je wisselde — bank, wisselkantoor, app",
+    "saved": "Wissel opgeslagen",
+    "save_error": "Wissel kon niet worden opgeslagen",
+    "delete_title": "Wissel verwijderen",
+    "delete_confirm": "Deze wissel verwijderen? Het geld keert terug naar de oorspronkelijke valuta.",
+    "delete_success": "Wissel verwijderd",
+    "holdings": "Volgens je registraties",
+    "tab": "Wissel",
+    "subtitle": "Geld dat tussen je valuta's is verplaatst",
+    "tour_tab_title": "Valutawissels",
+    "tour_tab_desc": "Wissel je de ene valuta in de andere? Leg het hier vast. Een wissel blijft buiten inkomsten en uitgaven, maar houdt je saldo per valuta exact.",
+    "tour_list_title": "Alleen wissels",
+    "tour_list_desc": "Elke regel toont wat je gaf en wat je echt ontving. Klopt er iets niet, pas het aan of verwijder het in de regel zelf."
   },
   "investments": {
     "title": "Beleggingen en crypto",

@@ -153,7 +153,9 @@
     "add_transaction": "İşlem",
     "add_transaction_desc": "gelir / gider",
     "add_goal": "Hedef",
-    "add_goal_desc": "birikim"
+    "add_goal_desc": "birikim",
+    "add_exchange": "Döviz",
+    "add_exchange_desc": "para biriminden para birimine"
   },
   "notifications": {
     "mark_all_read": "Tümünü okundu işaretle",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Hedefleriniz",
     "tour_goals_desc": "Tasarruf hedeflerinize doğru ilerlemeyi burada takip edin.",
     "tour_transactions_title": "Son işlemler",
-    "tour_transactions_desc": "En son işlemlerinize hızlı erişim."
+    "tour_transactions_desc": "En son işlemlerinize hızlı erişim.",
+    "tour_balance_title": "Bakiye ve para birimleri",
+    "tour_balance_desc": "Bir para biriminde kazanıp başka birinde harcıyorsanız, döviz işlemini kaydedin — böylece bakiye tam kalır. Döviz işlemi gelir de gider de değildir: yalnızca parayı para birimleriniz arasında taşır.",
+    "balance_missing_exchange": "{{currency}} bakiyeniz eksiye düşmüş, diğer para birimleri ise değil — bir döviz işlemi eksik görünüyor.",
+    "balance_record_exchange": "Kaydet"
   },
   "alerts": {
     "account_needs_email": "Telegram ile giriş yaptınız. Hesabınıza erişimi kaybetmemek için ayarlardan bir e-posta ve şifre ekleyin.",
@@ -371,7 +377,11 @@
     "tab_goal": "Hedef",
     "no_categories_expense": "Gider kategorisi yok.",
     "no_categories_income": "Gelir kategorisi yok.",
-    "save_transaction": "İşlemi kaydet"
+    "save_transaction": "İşlemi kaydet",
+    "title_exchange": "Döviz bozdurma",
+    "sub_exchange": "Parayı kendi para birimleriniz arasında taşır — gelir de gider de değildir",
+    "tab_exchange": "Döviz",
+    "save_exchange": "Bozdurmayı kaydet"
   },
   "goal_form": {
     "icon": "Simge",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Tüm hedeflerinizde biriken toplam tutar ve ne kadar kaldığı.",
     "tour_cards_title": "Hedefleriniz",
     "tour_cards_desc": "Burada her hedef için para yatırın, çekin veya katkı geçmişini kontrol edin."
+  },
+  "exchanges": {
+    "section_title": "Döviz işlemleri",
+    "add": "Döviz işlemi ekle",
+    "empty": "Henüz kayıtlı döviz işlemi yok",
+    "gave": "Verilen",
+    "got": "Alınan",
+    "same_currency": "İki farklı para birimi seçin",
+    "not_a_transaction": "Döviz işlemi gelir de gider de değildir: para yalnızca kendi para birimleriniz arasında yer değiştirir, raporlar değişmez.",
+    "note_placeholder": "Nerede bozdurdunuz — banka, döviz bürosu, uygulama",
+    "saved": "Döviz işlemi kaydedildi",
+    "save_error": "Döviz işlemi kaydedilemedi",
+    "delete_title": "Döviz işlemini sil",
+    "delete_confirm": "Bu döviz işlemi silinsin mi? Para geldiği para birimine geri döner.",
+    "delete_success": "Döviz işlemi silindi",
+    "holdings": "Kayıtlarınıza göre",
+    "tab": "Döviz",
+    "subtitle": "Para birimleriniz arasında taşınan para",
+    "tour_tab_title": "Döviz işlemleri",
+    "tour_tab_desc": "Bir para birimini başkasına mı çeviriyorsunuz? Buraya kaydedin. Döviz işlemi gelir ve giderlere girmez, ama para birimi bazındaki bakiyenizi doğru tutar.",
+    "tour_list_title": "Yalnızca döviz işlemleri",
+    "tour_list_desc": "Her satır ne verdiğinizi ve gerçekte ne aldığınızı gösterir. Yanlışsa satırın içinden düzeltin veya silin."
   },
   "investments": {
     "title": "Yatırımlar ve kripto",

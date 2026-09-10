@@ -153,7 +153,9 @@
     "add_transaction": "Transaktion",
     "add_transaction_desc": "Einnahme / Ausgabe",
     "add_goal": "Ziel",
-    "add_goal_desc": "Sparen"
+    "add_goal_desc": "Sparen",
+    "add_exchange": "Tausch",
+    "add_exchange_desc": "Währung in Währung"
   },
   "notifications": {
     "mark_all_read": "Alle als gelesen markieren",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Ihre Ziele",
     "tour_goals_desc": "Verfolgen Sie hier den Fortschritt Ihrer Sparziele.",
     "tour_transactions_title": "Letzte Transaktionen",
-    "tour_transactions_desc": "Schneller Zugriff auf Ihre neuesten Transaktionen."
+    "tour_transactions_desc": "Schneller Zugriff auf Ihre neuesten Transaktionen.",
+    "tour_balance_title": "Saldo und Währungen",
+    "tour_balance_desc": "Wenn Sie in einer Währung verdienen und in einer anderen ausgeben, erfassen Sie den Tausch — dann bleibt der Saldo exakt. Ein Tausch ist weder Einnahme noch Ausgabe: Er verschiebt nur Geld zwischen Ihren Währungen.",
+    "balance_missing_exchange": "Ihr {{currency}}-Saldo ist negativ, andere Währungen dagegen nicht — offenbar fehlt ein Tausch.",
+    "balance_record_exchange": "Erfassen"
   },
   "alerts": {
     "account_needs_email": "Sie haben sich über Telegram angemeldet. Fügen Sie in den Einstellungen E-Mail und Passwort hinzu, um den Zugriff auf Ihr Konto nicht zu verlieren.",
@@ -371,7 +377,11 @@
     "tab_goal": "Ziel",
     "no_categories_expense": "Noch keine Ausgabenkategorien.",
     "no_categories_income": "Noch keine Einnahmenkategorien.",
-    "save_transaction": "Transaktion speichern"
+    "save_transaction": "Transaktion speichern",
+    "title_exchange": "Währungstausch",
+    "sub_exchange": "Verschiebt Geld zwischen Ihren Währungen — weder Einnahme noch Ausgabe",
+    "tab_exchange": "Tausch",
+    "save_exchange": "Tausch speichern"
   },
   "goal_form": {
     "icon": "Symbol",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Insgesamt Angespartes über alle Ihre Ziele und wie viel noch übrig ist.",
     "tour_cards_title": "Ihre Ziele",
     "tour_cards_desc": "Zahlen Sie hier ein, aus, oder prüfen Sie den Einzahlungsverlauf für jedes Ziel."
+  },
+  "exchanges": {
+    "section_title": "Währungstausch",
+    "add": "Tausch hinzufügen",
+    "empty": "Noch keine Tauschvorgänge erfasst",
+    "gave": "Gegeben",
+    "got": "Erhalten",
+    "same_currency": "Wählen Sie zwei verschiedene Währungen",
+    "not_a_transaction": "Ein Tausch ist weder Einnahme noch Ausgabe: Das Geld wechselt nur zwischen Ihren Währungen, die Auswertungen bleiben unberührt.",
+    "note_placeholder": "Wo getauscht — Bank, Wechselstube, App",
+    "saved": "Tausch gespeichert",
+    "save_error": "Tausch konnte nicht gespeichert werden",
+    "delete_title": "Tausch löschen",
+    "delete_confirm": "Diesen Tausch löschen? Das Geld kehrt in die Ausgangswährung zurück.",
+    "delete_success": "Tausch gelöscht",
+    "holdings": "Laut Ihren Aufzeichnungen",
+    "tab": "Tausch",
+    "subtitle": "Geld, das zwischen Ihren Währungen verschoben wurde",
+    "tour_tab_title": "Währungstausch",
+    "tour_tab_desc": "Tauschen Sie eine Währung in eine andere? Erfassen Sie es hier. Ein Tausch bleibt aus Einnahmen und Ausgaben heraus, hält aber Ihren Saldo je Währung exakt.",
+    "tour_list_title": "Nur Tauschvorgänge",
+    "tour_list_desc": "Jede Zeile zeigt, was Sie gegeben und was Sie tatsächlich erhalten haben. Bei einem Fehler direkt in der Zeile korrigieren oder löschen."
   },
   "investments": {
     "title": "Investitionen und Krypto",

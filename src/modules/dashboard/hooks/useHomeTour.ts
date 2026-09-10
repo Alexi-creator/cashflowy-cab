@@ -21,6 +21,16 @@ export function useHomeTour() {
         },
       },
       {
+        // Right after the overview: the balance is the one card whose number depends on how
+        // currencies are handled, so the multicurrency rule is explained on it.
+        element: "[data-tour='balance']",
+        popover: {
+          title: t("home.tour_balance_title"),
+          description: t("home.tour_balance_desc"),
+          side: "bottom",
+        },
+      },
+      {
         element: "[data-tour='chart']",
         popover: {
           title: t("home.tour_chart_title"),

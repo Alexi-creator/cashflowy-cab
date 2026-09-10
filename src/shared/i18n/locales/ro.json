@@ -154,7 +154,9 @@
     "add_transaction": "Tranzacție",
     "add_transaction_desc": "venit / cheltuială",
     "add_goal": "Obiectiv",
-    "add_goal_desc": "economii"
+    "add_goal_desc": "economii",
+    "add_exchange": "Schimb",
+    "add_exchange_desc": "dintr-o valută în alta"
   },
   "notifications": {
     "mark_all_read": "Marchează tot ca citit",
@@ -222,7 +224,11 @@
     "tour_goals_title": "Obiectivele dvs.",
     "tour_goals_desc": "Urmăriți aici progresul către obiectivele dvs. de economisire.",
     "tour_transactions_title": "Tranzacții recente",
-    "tour_transactions_desc": "Acces rapid la cele mai recente tranzacții ale dvs."
+    "tour_transactions_desc": "Acces rapid la cele mai recente tranzacții ale dvs.",
+    "tour_balance_title": "Sold și valute",
+    "tour_balance_desc": "Dacă încasezi într-o valută și cheltuiești în alta, înregistrează schimbul — atunci soldul rămâne exact. Un schimb nu este venit și nu este cheltuială: doar mută banii între valutele tale.",
+    "balance_missing_exchange": "Soldul în {{currency}} este negativ, iar celelalte valute nu — pare că lipsește un schimb.",
+    "balance_record_exchange": "Înregistrează"
   },
   "alerts": {
     "account_needs_email": "Te-ai autentificat prin Telegram. Adaugă un e-mail și o parolă în setări ca să nu pierzi accesul la cont.",
@@ -382,7 +388,11 @@
     "tab_goal": "Obiectiv",
     "no_categories_expense": "Nicio categorie de cheltuieli.",
     "no_categories_income": "Nicio categorie de venituri.",
-    "save_transaction": "Salvează tranzacția"
+    "save_transaction": "Salvează tranzacția",
+    "title_exchange": "Schimb valutar",
+    "sub_exchange": "Mută banii între valutele tale — nu este venit și nu este cheltuială",
+    "tab_exchange": "Schimb",
+    "save_exchange": "Salvează schimbul"
   },
   "goal_form": {
     "icon": "Pictogramă",
@@ -465,6 +475,28 @@
     "tour_summary_desc": "Total economisit în toate obiectivele dvs. și cât a mai rămas.",
     "tour_cards_title": "Obiectivele dvs.",
     "tour_cards_desc": "Depuneți, retrageți sau verificați istoricul contribuțiilor pentru fiecare obiectiv aici."
+  },
+  "exchanges": {
+    "section_title": "Schimburi valutare",
+    "add": "Adaugă schimb",
+    "empty": "Niciun schimb înregistrat",
+    "gave": "Dat",
+    "got": "Primit",
+    "same_currency": "Alege două valute diferite",
+    "not_a_transaction": "Un schimb nu este venit și nu este cheltuială: banii doar trec dintr-o valută a ta în alta, rapoartele rămân neschimbate.",
+    "note_placeholder": "Unde ai schimbat — bancă, casă de schimb, aplicație",
+    "saved": "Schimb salvat",
+    "save_error": "Schimbul nu a putut fi salvat",
+    "delete_title": "Șterge schimbul",
+    "delete_confirm": "Ștergi acest schimb? Banii se vor întoarce în valuta de origine.",
+    "delete_success": "Schimb șters",
+    "holdings": "Conform înregistrărilor tale",
+    "tab": "Schimb",
+    "subtitle": "Bani mutați între valutele tale",
+    "tour_tab_title": "Schimburi valutare",
+    "tour_tab_desc": "Transformi o valută în alta? Înregistrează aici. Un schimb rămâne în afara veniturilor și cheltuielilor, dar păstrează exact soldul pe fiecare valută.",
+    "tour_list_title": "Doar schimburi",
+    "tour_list_desc": "Fiecare rând arată cât ai dat și cât ai primit în realitate. Dacă ai greșit, corectează sau șterge direct în rând."
   },
   "investments": {
     "title": "Investiții și cripto",

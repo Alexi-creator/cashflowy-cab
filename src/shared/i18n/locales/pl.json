@@ -154,7 +154,9 @@
     "add_transaction": "Transakcja",
     "add_transaction_desc": "przychód / wydatek",
     "add_goal": "Cel",
-    "add_goal_desc": "oszczędności"
+    "add_goal_desc": "oszczędności",
+    "add_exchange": "Wymiana",
+    "add_exchange_desc": "waluta na walutę"
   },
   "notifications": {
     "mark_all_read": "Oznacz wszystko jako przeczytane",
@@ -222,7 +224,11 @@
     "tour_goals_title": "Twoje cele",
     "tour_goals_desc": "Śledź tutaj postępy w realizacji celów oszczędnościowych.",
     "tour_transactions_title": "Ostatnie transakcje",
-    "tour_transactions_desc": "Szybki dostęp do najnowszych transakcji."
+    "tour_transactions_desc": "Szybki dostęp do najnowszych transakcji.",
+    "tour_balance_title": "Saldo i waluty",
+    "tour_balance_desc": "Jeśli zarabiasz w jednej walucie, a wydajesz w innej — zapisz wymianę, wtedy saldo pozostanie dokładne. Wymiana to nie przychód ani wydatek: przenosi tylko pieniądze między Twoimi walutami.",
+    "balance_missing_exchange": "Saldo w {{currency}} jest ujemne, choć w innych walutach pieniądze są — wygląda na brak wymiany.",
+    "balance_record_exchange": "Zapisz"
   },
   "alerts": {
     "account_needs_email": "Zalogowano przez Telegram. Dodaj e-mail i hasło w ustawieniach, aby nie utracić dostępu do konta.",
@@ -382,7 +388,11 @@
     "tab_goal": "Cel",
     "no_categories_expense": "Brak kategorii wydatków.",
     "no_categories_income": "Brak kategorii przychodów.",
-    "save_transaction": "Zapisz transakcję"
+    "save_transaction": "Zapisz transakcję",
+    "title_exchange": "Wymiana waluty",
+    "sub_exchange": "Przenosi pieniądze między Twoimi walutami — to nie przychód ani wydatek",
+    "tab_exchange": "Wymiana",
+    "save_exchange": "Zapisz wymianę"
   },
   "goal_form": {
     "icon": "Ikona",
@@ -465,6 +475,28 @@
     "tour_summary_desc": "Łączna kwota zaoszczędzona we wszystkich celach i ile pozostało.",
     "tour_cards_title": "Twoje cele",
     "tour_cards_desc": "Wpłacaj, wypłacaj lub sprawdzaj tutaj historię wpłat dla każdego celu."
+  },
+  "exchanges": {
+    "section_title": "Wymiany walut",
+    "add": "Dodaj wymianę",
+    "empty": "Brak zapisanych wymian",
+    "gave": "Oddano",
+    "got": "Otrzymano",
+    "same_currency": "Wybierz dwie różne waluty",
+    "not_a_transaction": "Wymiana to nie przychód ani wydatek: pieniądze jedynie przechodzą między Twoimi walutami, raporty pozostają bez zmian.",
+    "note_placeholder": "Gdzie wymieniano — bank, kantor, aplikacja",
+    "saved": "Wymiana zapisana",
+    "save_error": "Nie udało się zapisać wymiany",
+    "delete_title": "Usuń wymianę",
+    "delete_confirm": "Usunąć tę wymianę? Pieniądze wrócą do waluty, z której pochodziły.",
+    "delete_success": "Wymiana usunięta",
+    "holdings": "Według Twoich zapisów",
+    "tab": "Wymiana",
+    "subtitle": "Pieniądze przeniesione między Twoimi walutami",
+    "tour_tab_title": "Wymiany walut",
+    "tour_tab_desc": "Zamieniasz jedną walutę na inną — zapisz to tutaj. Wymiana nie trafi do przychodów ani wydatków, ale saldo w każdej walucie pozostanie dokładne.",
+    "tour_list_title": "Tylko wymiany",
+    "tour_list_desc": "Każdy wiersz pokazuje, ile oddano i ile rzeczywiście otrzymano. W razie pomyłki popraw lub usuń bezpośrednio w wierszu."
   },
   "investments": {
     "title": "Inwestycje i krypto",

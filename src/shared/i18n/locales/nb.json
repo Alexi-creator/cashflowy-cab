@@ -153,7 +153,9 @@
     "add_transaction": "Transaksjon",
     "add_transaction_desc": "inntekt / utgift",
     "add_goal": "Mål",
-    "add_goal_desc": "sparing"
+    "add_goal_desc": "sparing",
+    "add_exchange": "Veksling",
+    "add_exchange_desc": "valuta til valuta"
   },
   "notifications": {
     "mark_all_read": "Merk alle som lest",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Dine mål",
     "tour_goals_desc": "Følg fremgangen mot sparemålene dine her.",
     "tour_transactions_title": "Nylige transaksjoner",
-    "tour_transactions_desc": "Rask tilgang til dine nyeste transaksjoner."
+    "tour_transactions_desc": "Rask tilgang til dine nyeste transaksjoner.",
+    "tour_balance_title": "Saldo og valutaer",
+    "tour_balance_desc": "Tjener du i én valuta og bruker i en annen, registrer vekslingen — da forblir saldoen nøyaktig. En veksling er verken inntekt eller utgift: den flytter bare penger mellom valutaene dine.",
+    "balance_missing_exchange": "Saldoen din i {{currency}} er negativ mens andre valutaer ikke er det — en veksling ser ut til å mangle.",
+    "balance_record_exchange": "Registrer"
   },
   "alerts": {
     "account_needs_email": "Du logget inn via Telegram. Legg til e-post og passord i innstillingene så du ikke mister tilgangen til kontoen din.",
@@ -371,7 +377,11 @@
     "tab_goal": "Mål",
     "no_categories_expense": "Ingen utgiftskategorier.",
     "no_categories_income": "Ingen inntektskategorier.",
-    "save_transaction": "Lagre transaksjon"
+    "save_transaction": "Lagre transaksjon",
+    "title_exchange": "Valutaveksling",
+    "sub_exchange": "Flytter penger mellom valutaene dine — verken inntekt eller utgift",
+    "tab_exchange": "Veksling",
+    "save_exchange": "Lagre veksling"
   },
   "goal_form": {
     "icon": "Ikon",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Totalt spart på tvers av alle målene dine, og hvor mye som gjenstår.",
     "tour_cards_title": "Dine mål",
     "tour_cards_desc": "Sett inn, ta ut, eller sjekk innskuddshistorikken for hvert mål her."
+  },
+  "exchanges": {
+    "section_title": "Valutavekslinger",
+    "add": "Legg til veksling",
+    "empty": "Ingen vekslinger registrert ennå",
+    "gave": "Ga",
+    "got": "Fikk",
+    "same_currency": "Velg to forskjellige valutaer",
+    "not_a_transaction": "En veksling er verken inntekt eller utgift: pengene flyttes bare mellom valutaene dine, og rapportene endres ikke.",
+    "note_placeholder": "Hvor du vekslet — bank, vekslingskontor, app",
+    "saved": "Veksling lagret",
+    "save_error": "Vekslingen kunne ikke lagres",
+    "delete_title": "Slett veksling",
+    "delete_confirm": "Slette denne vekslingen? Pengene går tilbake til den opprinnelige valutaen.",
+    "delete_success": "Veksling slettet",
+    "holdings": "Ifølge registreringene dine",
+    "tab": "Veksling",
+    "subtitle": "Penger flyttet mellom valutaene dine",
+    "tour_tab_title": "Valutavekslinger",
+    "tour_tab_desc": "Veksler du én valuta til en annen? Registrer det her. En veksling holdes utenfor inntekter og utgifter, men holder saldoen per valuta nøyaktig.",
+    "tour_list_title": "Kun vekslinger",
+    "tour_list_desc": "Hver rad viser hva du ga og hva du faktisk fikk. Ble det feil, rett eller slett direkte i raden."
   },
   "investments": {
     "title": "Investeringer og krypto",

@@ -57,6 +57,9 @@ export const API_URLS = {
   goals: {
     goals: `${API_URL}/goals`,
   },
+  exchanges: {
+    exchanges: `${API_URL}/exchanges`,
+  },
   subscriptions: {
     usage: `${API_URL}/subscriptions/usage`,
   },

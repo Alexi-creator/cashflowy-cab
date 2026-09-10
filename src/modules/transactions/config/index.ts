@@ -19,6 +19,9 @@ export const getTypeOptions = (t: TFunction) => [
  * `useUrlParams` never crashes on malformed values in the link.
  */
 export const transactionsParamsSchema = z.object({
+  /** Which table the page shows. Exchanges are not transactions, so they get their own view
+   *  rather than a row type — mixing them into the table would put them in its totals. */
+  view: z.enum(["transactions", "exchanges"]).catch("transactions").default("transactions"),
   type: z.enum(["income", "expense"]).optional().catch(undefined),
   // Multi-select: serialized in the URL as repeated params (?categoryId=a&categoryId=b).
   // Normalized to an array — a single value in the URL still parses to a one-element array.

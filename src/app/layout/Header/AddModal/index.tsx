@@ -1,9 +1,10 @@
 import { Stack, Tabs } from "@mantine/core"
-import { IconCreditCard, IconTarget } from "@tabler/icons-react"
+import { IconArrowsExchange, IconCreditCard, IconTarget } from "@tabler/icons-react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 // TODO(asset): temporarily hidden (form under development) — restore the AssetForm import and IconChartLine
 // import { AssetForm } from "./AssetForm"
+import { ExchangeForm } from "@/modules/exchanges/ui"
 import { GoalForm } from "@/modules/goals/ui"
 import { TransactionForm } from "@/modules/transactions/ui"
 import { useModalTitle } from "@/shared/hooks/useModalTitle"
@@ -19,7 +20,7 @@ interface AddModalProps {
 
 /**
  * Modal container for creating financial records.
- * Contains tabs for switching between types: transaction, goal, asset.
+ * Contains tabs for switching between types: transaction, goal, exchange, asset.
  * Locked single-form variants live in their own modules (`TransactionFormModal`,
  * `GoalFormModal`) so pages do not have to reach up into the app layer.
  */
@@ -41,6 +42,9 @@ export function AddModal({ type: initialType = "transaction" }: AddModalProps) {
           <Tabs.Tab value="goal" leftSection={<IconTarget size={14} />}>
             {t("add_modal.tab_goal")}
           </Tabs.Tab>
+          <Tabs.Tab value="exchange" leftSection={<IconArrowsExchange size={14} />}>
+            {t("add_modal.tab_exchange")}
+          </Tabs.Tab>
           {/* TODO(asset): temporarily hidden (form under development) — restore the tab (+ IconChartLine) */}
           {/* <Tabs.Tab value="asset" leftSection={<IconChartLine size={14} />}>
               Asset
@@ -50,6 +54,7 @@ export function AddModal({ type: initialType = "transaction" }: AddModalProps) {
 
       {type === "transaction" && <TransactionForm onSubmit={close} onCancel={close} />}
       {type === "goal" && <GoalForm onSubmit={close} onCancel={close} />}
+      {type === "exchange" && <ExchangeForm onSubmit={close} onCancel={close} />}
       {/* TODO(asset): temporarily hidden (form under development) — restore the AssetForm render */}
       {/* {type === "asset" && <AssetForm onSubmit={close} onCancel={close} />} */}
     </Stack>

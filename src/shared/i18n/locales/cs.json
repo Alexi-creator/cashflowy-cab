@@ -154,7 +154,9 @@
     "add_transaction": "Transakce",
     "add_transaction_desc": "příjem / výdaj",
     "add_goal": "Cíl",
-    "add_goal_desc": "úspory"
+    "add_goal_desc": "úspory",
+    "add_exchange": "Směna",
+    "add_exchange_desc": "měna za měnu"
   },
   "notifications": {
     "mark_all_read": "Označit vše jako přečtené",
@@ -222,7 +224,11 @@
     "tour_goals_title": "Vaše cíle",
     "tour_goals_desc": "Sledujte zde pokrok směrem k vašim spořicím cílům.",
     "tour_transactions_title": "Poslední transakce",
-    "tour_transactions_desc": "Rychlý přístup k vašim nejnovějším transakcím."
+    "tour_transactions_desc": "Rychlý přístup k vašim nejnovějším transakcím.",
+    "tour_balance_title": "Zůstatek a měny",
+    "tour_balance_desc": "Pokud vyděláváte v jedné měně a utrácíte v jiné, zaznamenejte směnu — zůstatek pak zůstane přesný. Směna není příjem ani výdaj: pouze přesouvá peníze mezi vašimi měnami.",
+    "balance_missing_exchange": "Zůstatek v {{currency}} je záporný, zatímco v jiných měnách ne — zřejmě chybí směna.",
+    "balance_record_exchange": "Zaznamenat"
   },
   "alerts": {
     "account_needs_email": "Přihlásili jste se přes Telegram. Přidejte v nastavení e-mail a heslo, abyste neztratili přístup ke svému účtu.",
@@ -382,7 +388,11 @@
     "tab_goal": "Cíl",
     "no_categories_expense": "Žádné kategorie výdajů.",
     "no_categories_income": "Žádné kategorie příjmů.",
-    "save_transaction": "Uložit transakci"
+    "save_transaction": "Uložit transakci",
+    "title_exchange": "Směna měny",
+    "sub_exchange": "Přesouvá peníze mezi vašimi měnami — není to příjem ani výdaj",
+    "tab_exchange": "Směna",
+    "save_exchange": "Uložit směnu"
   },
   "goal_form": {
     "icon": "Ikona",
@@ -465,6 +475,28 @@
     "tour_summary_desc": "Celková naspořená částka napříč všemi vašimi cíli a kolik zbývá.",
     "tour_cards_title": "Vaše cíle",
     "tour_cards_desc": "Zde můžete vkládat, vybírat nebo zkontrolovat historii vkladů pro každý cíl."
+  },
+  "exchanges": {
+    "section_title": "Směny měn",
+    "add": "Přidat směnu",
+    "empty": "Zatím žádné směny",
+    "gave": "Dáno",
+    "got": "Získáno",
+    "same_currency": "Vyberte dvě různé měny",
+    "not_a_transaction": "Směna není příjem ani výdaj: peníze se pouze přesouvají mezi vašimi měnami, přehledy zůstávají beze změny.",
+    "note_placeholder": "Kde jste měnili — banka, směnárna, aplikace",
+    "saved": "Směna uložena",
+    "save_error": "Směnu se nepodařilo uložit",
+    "delete_title": "Smazat směnu",
+    "delete_confirm": "Smazat tuto směnu? Peníze se vrátí do původní měny.",
+    "delete_success": "Směna smazána",
+    "holdings": "Podle vašich záznamů",
+    "tab": "Směna",
+    "subtitle": "Peníze přesunuté mezi vašimi měnami",
+    "tour_tab_title": "Směny měn",
+    "tour_tab_desc": "Měníte jednu měnu za jinou? Zaznamenejte to zde. Směna se nedostane do příjmů ani výdajů, ale zůstatek v jednotlivých měnách zůstane přesný.",
+    "tour_list_title": "Jen směny",
+    "tour_list_desc": "Každý řádek ukazuje, kolik jste dali a kolik jste skutečně dostali. Při chybě opravte nebo smažte přímo v řádku."
   },
   "investments": {
     "title": "Investice a krypto",

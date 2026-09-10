@@ -153,7 +153,9 @@
     "add_transaction": "Transaction",
     "add_transaction_desc": "revenu / dépense",
     "add_goal": "Objectif",
-    "add_goal_desc": "épargne"
+    "add_goal_desc": "épargne",
+    "add_exchange": "Change",
+    "add_exchange_desc": "d'une devise à l'autre"
   },
   "notifications": {
     "mark_all_read": "Tout marquer comme lu",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Vos objectifs",
     "tour_goals_desc": "Suivez ici la progression de vos objectifs d'épargne.",
     "tour_transactions_title": "Transactions récentes",
-    "tour_transactions_desc": "Accès rapide à vos transactions les plus récentes."
+    "tour_transactions_desc": "Accès rapide à vos transactions les plus récentes.",
+    "tour_balance_title": "Solde et devises",
+    "tour_balance_desc": "Si vous gagnez dans une devise et dépensez dans une autre, enregistrez le change — le solde restera exact. Un change n'est ni un revenu ni une dépense : il déplace seulement l'argent entre vos devises.",
+    "balance_missing_exchange": "Votre solde en {{currency}} est négatif alors que les autres devises ne le sont pas — un change semble manquer.",
+    "balance_record_exchange": "Enregistrer"
   },
   "alerts": {
     "account_needs_email": "Vous vous êtes connecté via Telegram. Ajoutez un e-mail et un mot de passe dans les paramètres pour ne pas perdre l'accès à votre compte.",
@@ -371,7 +377,11 @@
     "tab_goal": "Objectif",
     "no_categories_expense": "Aucune catégorie de dépenses.",
     "no_categories_income": "Aucune catégorie de revenus.",
-    "save_transaction": "Enregistrer la transaction"
+    "save_transaction": "Enregistrer la transaction",
+    "title_exchange": "Change de devises",
+    "sub_exchange": "Déplace l'argent entre vos devises — ni revenu ni dépense",
+    "tab_exchange": "Change",
+    "save_exchange": "Enregistrer le change"
   },
   "goal_form": {
     "icon": "Icône",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Total épargné sur tous vos objectifs et ce qu'il reste.",
     "tour_cards_title": "Vos objectifs",
     "tour_cards_desc": "Déposez, retirez ou consultez l'historique des contributions de chaque objectif ici."
+  },
+  "exchanges": {
+    "section_title": "Changes de devises",
+    "add": "Ajouter un change",
+    "empty": "Aucun change enregistré",
+    "gave": "Donné",
+    "got": "Reçu",
+    "same_currency": "Choisissez deux devises différentes",
+    "not_a_transaction": "Un change n'est ni un revenu ni une dépense : l'argent passe simplement d'une de vos devises à une autre, vos rapports restent inchangés.",
+    "note_placeholder": "Où vous avez changé — banque, bureau de change, application",
+    "saved": "Change enregistré",
+    "save_error": "Impossible d'enregistrer le change",
+    "delete_title": "Supprimer le change",
+    "delete_confirm": "Supprimer ce change ? L'argent retournera dans la devise d'origine.",
+    "delete_success": "Change supprimé",
+    "holdings": "D'après vos enregistrements",
+    "tab": "Change",
+    "subtitle": "L'argent déplacé entre vos devises",
+    "tour_tab_title": "Changes de devises",
+    "tour_tab_desc": "Vous convertissez une devise en une autre ? Enregistrez-le ici. Un change reste hors des revenus et des dépenses, mais garde votre solde par devise exact.",
+    "tour_list_title": "Uniquement les changes",
+    "tour_list_desc": "Chaque ligne indique ce que vous avez donné et ce que vous avez réellement reçu. En cas d'erreur, corrigez ou supprimez directement dans la ligne."
   },
   "investments": {
     "title": "Investissements et crypto",

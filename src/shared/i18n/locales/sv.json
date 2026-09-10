@@ -153,7 +153,9 @@
     "add_transaction": "Transaktion",
     "add_transaction_desc": "inkomst / utgift",
     "add_goal": "Mål",
-    "add_goal_desc": "sparande"
+    "add_goal_desc": "sparande",
+    "add_exchange": "Växling",
+    "add_exchange_desc": "valuta till valuta"
   },
   "notifications": {
     "mark_all_read": "Markera alla som lästa",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Dina mål",
     "tour_goals_desc": "Följ framstegen mot dina sparmål här.",
     "tour_transactions_title": "Senaste transaktioner",
-    "tour_transactions_desc": "Snabb åtkomst till dina senaste transaktioner."
+    "tour_transactions_desc": "Snabb åtkomst till dina senaste transaktioner.",
+    "tour_balance_title": "Saldo och valutor",
+    "tour_balance_desc": "Tjänar du i en valuta och spenderar i en annan — registrera växlingen, då förblir saldot exakt. En växling är varken inkomst eller utgift: den flyttar bara pengar mellan dina valutor.",
+    "balance_missing_exchange": "Ditt saldo i {{currency}} är negativt medan andra valutor inte är det — en växling verkar saknas.",
+    "balance_record_exchange": "Registrera"
   },
   "alerts": {
     "account_needs_email": "Du loggade in via Telegram. Lägg till e-post och lösenord i inställningarna så att du inte förlorar åtkomsten till ditt konto.",
@@ -371,7 +377,11 @@
     "tab_goal": "Mål",
     "no_categories_expense": "Inga utgiftskategorier.",
     "no_categories_income": "Inga inkomstkategorier.",
-    "save_transaction": "Spara transaktion"
+    "save_transaction": "Spara transaktion",
+    "title_exchange": "Valutaväxling",
+    "sub_exchange": "Flyttar pengar mellan dina valutor — varken inkomst eller utgift",
+    "tab_exchange": "Växling",
+    "save_exchange": "Spara växling"
   },
   "goal_form": {
     "icon": "Ikon",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Totalt sparat i alla dina mål och hur mycket som återstår.",
     "tour_cards_title": "Dina mål",
     "tour_cards_desc": "Sätt in, ta ut eller kontrollera insättningshistoriken för varje mål här."
+  },
+  "exchanges": {
+    "section_title": "Valutaväxlingar",
+    "add": "Lägg till växling",
+    "empty": "Inga växlingar registrerade än",
+    "gave": "Gav",
+    "got": "Fick",
+    "same_currency": "Välj två olika valutor",
+    "not_a_transaction": "En växling är varken inkomst eller utgift: pengarna flyttas bara mellan dina valutor och rapporterna påverkas inte.",
+    "note_placeholder": "Var du växlade — bank, växlingskontor, app",
+    "saved": "Växling sparad",
+    "save_error": "Växlingen kunde inte sparas",
+    "delete_title": "Ta bort växling",
+    "delete_confirm": "Ta bort den här växlingen? Pengarna går tillbaka till ursprungsvalutan.",
+    "delete_success": "Växling borttagen",
+    "holdings": "Enligt dina noteringar",
+    "tab": "Växling",
+    "subtitle": "Pengar som flyttats mellan dina valutor",
+    "tour_tab_title": "Valutaväxlingar",
+    "tour_tab_desc": "Växlar du en valuta till en annan? Registrera det här. En växling hålls utanför inkomster och utgifter men håller saldot per valuta exakt.",
+    "tour_list_title": "Endast växlingar",
+    "tour_list_desc": "Varje rad visar vad du gav och vad du faktiskt fick. Blev det fel, rätta eller ta bort direkt i raden."
   },
   "investments": {
     "title": "Investeringar och krypto",

@@ -6,6 +6,7 @@ import {
   HoverCard,
   Paper,
   Stack,
+  Tabs,
   Text,
   Title,
   Tooltip,
@@ -17,6 +18,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { useCategories } from "@/modules/categories/api/useCategories"
+import { ExchangeFormModal, ExchangesTable } from "@/modules/exchanges/ui"
 import { useUsage } from "@/modules/subscription/api/useUsage"
 import { isLimitBlocked } from "@/modules/subscription/lib/plan"
 import { LimitAlert } from "@/modules/subscription/ui"
@@ -48,7 +50,7 @@ export function TransactionsPage() {
   })
   const [params, setParams] = useUrlParams(transactionsParamsSchema)
   const openModal = useModalStore((s) => s.open)
-  const { startTour } = useTransactionsTour()
+  const { startTour } = useTransactionsTour(params.view)
 
   const apiParams = {
     type: params.type,
@@ -86,6 +88,11 @@ export function TransactionsPage() {
   const openAddModal = () =>
     openModal({ size: "lg", centered: true, children: <TransactionFormModal /> })
 
+  const openAddExchange = () =>
+    openModal({ size: "lg", centered: true, children: <ExchangeFormModal /> })
+
+  const isExchangesView = params.view === "exchanges"
+
   const openBulkDelete = () =>
     openModal({
       centered: true,
@@ -111,10 +118,12 @@ export function TransactionsPage() {
       <Group justify="space-between" align="flex-end" wrap="wrap">
         <Stack gap={4}>
           <Title order={2} size="h3">
-            {t("transactions.title")}
+            {isExchangesView ? t("exchanges.section_title") : t("transactions.title")}
           </Title>
           <Text size="sm" c="dimmed">
-            {t("transactions.count_label", { count: total })}
+            {isExchangesView
+              ? t("exchanges.subtitle")
+              : t("transactions.count_label", { count: total })}
           </Text>
         </Stack>
         <Group gap="xs">
@@ -124,7 +133,13 @@ export function TransactionsPage() {
           </Button>
           */}
           <Box data-tour="tx-add">
-            {transactionsBlocked ? (
+            {isExchangesView ? (
+              // Exchanges are not transactions, so neither the monthly transaction limit nor the
+              // "no categories yet" guard has anything to say about them.
+              <Button size="sm" leftSection={<IconPlus size={14} />} onClick={openAddExchange}>
+                {t("exchanges.add")}
+              </Button>
+            ) : transactionsBlocked ? (
               // a disabled button swallows hover, so the tooltip listens on the wrapping Box
               <Tooltip label={t("limits.blocked_button_tooltip")} position="bottom-end" withArrow>
                 <Box>
@@ -179,7 +194,20 @@ export function TransactionsPage() {
         </Group>
       </Group>
 
-      <LimitAlert usage={usage?.transactions} kind="transactions" />
+      {/* The transaction limit is about transactions, so the alert belongs to their view only. */}
+      {!isExchangesView && <LimitAlert usage={usage?.transactions} kind="transactions" />}
+
+      <Tabs
+        value={params.view}
+        onChange={(v) => setParams({ view: v === "exchanges" ? "exchanges" : "transactions" })}
+      >
+        <Tabs.List>
+          <Tabs.Tab value="transactions">{t("transactions.title")}</Tabs.Tab>
+          <Tabs.Tab value="exchanges" data-tour="tx-exchanges">
+            {t("exchanges.tab")}
+          </Tabs.Tab>
+        </Tabs.List>
+      </Tabs>
 
       <Paper
         data-tour="tx-list"
@@ -195,35 +223,41 @@ export function TransactionsPage() {
           minHeight: isDesktop ? 420 : 320,
         }}
       >
-        <TransactionsFilters params={params} setParams={setParams} />
+        {isExchangesView ? (
+          <ExchangesTable />
+        ) : (
+          <>
+            <TransactionsFilters params={params} setParams={setParams} />
 
-        <ActiveFilterChips
-          groups={buildFilterChipGroups({ params, categories: allCategories, t, setParams })}
-        />
+            <ActiveFilterChips
+              groups={buildFilterChipGroups({ params, categories: allCategories, t, setParams })}
+            />
 
-        <TransactionsToolbar
-          selectedCount={selectedRecords.length}
-          onClearSelection={() => setSelectedRecords([])}
-          onBulkDelete={openBulkDelete}
-        />
+            <TransactionsToolbar
+              selectedCount={selectedRecords.length}
+              onClearSelection={() => setSelectedRecords([])}
+              onBulkDelete={openBulkDelete}
+            />
 
-        <TransactionsTable
-          transactions={items}
-          total={total}
-          page={params.page}
-          onPageChange={(page) => {
-            setSelectedRecords([])
-            setParams({ page })
-          }}
-          recordsPerPage={params.limit}
-          onRecordsPerPageChange={(limit) => setParams({ limit, page: 1 })}
-          fetching={isLoading || isPlaceholderData}
-          isError={isError}
-          selectedRecords={selectedRecords}
-          onSelectedRecordsChange={setSelectedRecords}
-          summary={summary}
-          type={params.type}
-        />
+            <TransactionsTable
+              transactions={items}
+              total={total}
+              page={params.page}
+              onPageChange={(page) => {
+                setSelectedRecords([])
+                setParams({ page })
+              }}
+              recordsPerPage={params.limit}
+              onRecordsPerPageChange={(limit) => setParams({ limit, page: 1 })}
+              fetching={isLoading || isPlaceholderData}
+              isError={isError}
+              selectedRecords={selectedRecords}
+              onSelectedRecordsChange={setSelectedRecords}
+              summary={summary}
+              type={params.type}
+            />
+          </>
+        )}
       </Paper>
     </Stack>
   )

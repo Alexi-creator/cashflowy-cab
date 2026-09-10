@@ -501,11 +501,77 @@ function buildTransactions(params: URLSearchParams) {
   }
 }
 
+/**
+ * Demo exchanges. Kept small and hand-written: their point is to show the shape of the feature
+ * (what was given, what was received, what the counter kept), not to generate volume.
+ */
+const EXCHANGES = [
+  {
+    id: "fx-1",
+    fromCurrency: "USD",
+    fromAmount: 1000,
+    toCurrency: "EUR",
+    toAmount: 905,
+    description: "Wise",
+    date: format(subDays(new Date(), 12), "yyyy-MM-dd"),
+    effectiveRate: 0.905,
+    midMarketRate: 0.918,
+    costPct: 1.42,
+  },
+  {
+    id: "fx-2",
+    fromCurrency: "EUR",
+    fromAmount: 400,
+    toCurrency: "USD",
+    toAmount: 428,
+    description: "",
+    date: format(subDays(new Date(), 47), "yyyy-MM-dd"),
+    effectiveRate: 1.07,
+    midMarketRate: 1.089,
+    costPct: 1.74,
+  },
+]
+
+/** Net effect of the demo exchanges on each currency — the same arithmetic the backend does. */
+function exchangeMovements() {
+  const net = new Map<string, number>()
+  for (const x of EXCHANGES) {
+    net.set(x.fromCurrency, (net.get(x.fromCurrency) ?? 0) - x.fromAmount)
+    net.set(x.toCurrency, (net.get(x.toCurrency) ?? 0) + x.toAmount)
+  }
+  return net
+}
+
 function buildBalance() {
   const income = DATASET.filter((t) => t.type === "income").reduce((s, t) => s + t.amount, 0)
   const expense = DATASET.filter((t) => t.type === "expense").reduce((s, t) => s + t.amount, 0)
-  const balance = round2(income - expense)
-  return { baseCurrency: BASE_CURRENCY, balance, balanceUsd: balance }
+
+  // Every generated transaction is in the base currency; only the exchanges bring another one in.
+  const net = exchangeMovements()
+  net.set(BASE_CURRENCY, (net.get(BASE_CURRENCY) ?? 0) + income - expense)
+
+  const byCurrency = [...net]
+    .map(([currency, amount]) => ({ currency, amount: round2(amount) }))
+    .filter((r) => r.amount !== 0 || r.currency === BASE_CURRENCY)
+    .sort((a, b) => (a.currency === BASE_CURRENCY ? -1 : b.currency === BASE_CURRENCY ? 1 : 0))
+
+  // Rough demo rate for anything that is not the base currency.
+  const RATES: Record<string, number> = { EUR: 1.09 }
+  const balance = round2(
+    byCurrency.reduce(
+      (sum, r) =>
+        sum + (r.currency === BASE_CURRENCY ? r.amount : r.amount * (RATES[r.currency] ?? 1)),
+      0,
+    ),
+  )
+
+  return {
+    baseCurrency: BASE_CURRENCY,
+    balance,
+    balanceUsd: balance,
+    byCurrency,
+    isApproximate: byCurrency.some((r) => r.currency !== BASE_CURRENCY),
+  }
 }
 
 function buildMe() {
@@ -801,6 +867,7 @@ export function getStub(url: string, method: string): unknown {
   if (path.endsWith("/investing/positions")) return paged(INVESTING_POSITIONS, q)
   if (path.endsWith("/investing/holdings")) return INVESTING_HOLDINGS
   if (path.endsWith("/transactions/balance")) return buildBalance()
+  if (path.endsWith("/exchanges")) return EXCHANGES
   if (path.endsWith("/transactions")) return buildTransactions(q)
 
   if (path.endsWith("/expenses/summary"))

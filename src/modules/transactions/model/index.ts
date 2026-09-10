@@ -31,9 +31,20 @@ export const transactionsSummarySchema = z.object({
 })
 export type TransactionsSummary = z.infer<typeof transactionsSummarySchema>
 
+/** Exact free balance in one currency — a plain sum, nothing converted. */
+export const currencyBalanceSchema = z.object({
+  currency: z.string(),
+  amount: z.coerce.number(),
+})
+export type CurrencyBalance = z.infer<typeof currencyBalanceSchema>
+
 /**
- * User's total balance. `balance` — in the base currency, `balanceUsd` — in USD.
- * Either amount is null if exchange rates are unavailable (we show "—").
+ * User's total balance.
+ *
+ * `byCurrency` is the balance itself: one exact figure per currency held. `balance`/`balanceUsd`
+ * roll those into a single number, converting whatever sits in a foreign currency at today's
+ * rate — so they are null without rates, and `isApproximate` says whether the roll-up involved
+ * a conversion at all. Both fields are optional: an older backend does not send them.
  */
 export const balanceSchema = z.object({
   baseCurrency: z.string(),
@@ -41,6 +52,10 @@ export const balanceSchema = z.object({
   balanceUsd: z.coerce.number().nullable(),
   /** Free balance, in the base currency. */
   balance: z.coerce.number().nullable(),
+  /** Per-currency exact balances; the base currency is always present, even at zero. */
+  byCurrency: z.array(currencyBalanceSchema).optional().default([]),
+  /** Whether `balance` required converting a foreign holding — render it with a "≈". */
+  isApproximate: z.boolean().optional().default(false),
   /** Reserved in active goals, base currency; null without rates. May be absent on old backends. */
   inGoals: z.coerce.number().nullable().optional(),
   /** Reserved in active goals, USD; null without rates. */

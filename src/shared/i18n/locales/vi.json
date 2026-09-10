@@ -152,7 +152,9 @@
     "add_transaction": "Giao dịch",
     "add_transaction_desc": "thu nhập / chi tiêu",
     "add_goal": "Mục tiêu",
-    "add_goal_desc": "tiết kiệm"
+    "add_goal_desc": "tiết kiệm",
+    "add_exchange": "Đổi tiền",
+    "add_exchange_desc": "từ tiền này sang tiền khác"
   },
   "notifications": {
     "mark_all_read": "Đánh dấu tất cả đã đọc",
@@ -218,7 +220,11 @@
     "tour_goals_title": "Mục tiêu của bạn",
     "tour_goals_desc": "Theo dõi tiến độ hướng tới các mục tiêu tiết kiệm của bạn tại đây.",
     "tour_transactions_title": "Giao dịch gần đây",
-    "tour_transactions_desc": "Truy cập nhanh vào các giao dịch mới nhất của bạn."
+    "tour_transactions_desc": "Truy cập nhanh vào các giao dịch mới nhất của bạn.",
+    "tour_balance_title": "Số dư và tiền tệ",
+    "tour_balance_desc": "Nếu bạn nhận tiền bằng một loại tiền và chi tiêu bằng loại khác, hãy ghi lại giao dịch đổi — số dư sẽ luôn chính xác. Đổi tiền không phải thu nhập cũng không phải chi tiêu: nó chỉ chuyển tiền giữa các loại tiền của bạn.",
+    "balance_missing_exchange": "Số dư {{currency}} đang âm trong khi các loại tiền khác thì không — có vẻ thiếu một giao dịch đổi.",
+    "balance_record_exchange": "Ghi lại"
   },
   "alerts": {
     "account_needs_email": "Bạn đã đăng nhập qua Telegram. Hãy thêm email và mật khẩu trong cài đặt để không mất quyền truy cập tài khoản.",
@@ -360,7 +366,11 @@
     "tab_goal": "Mục tiêu",
     "no_categories_expense": "Không có danh mục chi tiêu.",
     "no_categories_income": "Không có danh mục thu nhập.",
-    "save_transaction": "Lưu giao dịch"
+    "save_transaction": "Lưu giao dịch",
+    "title_exchange": "Đổi tiền",
+    "sub_exchange": "Chuyển tiền giữa các loại tiền của bạn — không phải thu nhập cũng không phải chi tiêu",
+    "tab_exchange": "Đổi tiền",
+    "save_exchange": "Lưu giao dịch đổi"
   },
   "goal_form": {
     "icon": "Biểu tượng",
@@ -441,6 +451,28 @@
     "tour_summary_desc": "Tổng số tiền đã tiết kiệm trên tất cả các mục tiêu của bạn và số tiền còn lại.",
     "tour_cards_title": "Mục tiêu của bạn",
     "tour_cards_desc": "Gửi tiền, rút tiền hoặc xem lịch sử đóng góp cho từng mục tiêu tại đây."
+  },
+  "exchanges": {
+    "section_title": "Đổi tiền",
+    "add": "Thêm giao dịch đổi",
+    "empty": "Chưa có giao dịch đổi tiền nào",
+    "gave": "Đã đưa",
+    "got": "Đã nhận",
+    "same_currency": "Hãy chọn hai loại tiền khác nhau",
+    "not_a_transaction": "Đổi tiền không phải thu nhập cũng không phải chi tiêu: tiền chỉ chuyển giữa các loại tiền của bạn, báo cáo không thay đổi.",
+    "note_placeholder": "Đổi ở đâu — ngân hàng, quầy đổi tiền, ứng dụng",
+    "saved": "Đã lưu giao dịch đổi",
+    "save_error": "Không thể lưu giao dịch đổi",
+    "delete_title": "Xóa giao dịch đổi",
+    "delete_confirm": "Xóa giao dịch đổi này? Tiền sẽ quay lại loại tiền ban đầu.",
+    "delete_success": "Đã xóa giao dịch đổi",
+    "holdings": "Theo ghi chép của bạn",
+    "tab": "Đổi tiền",
+    "subtitle": "Tiền đã chuyển giữa các loại tiền của bạn",
+    "tour_tab_title": "Đổi tiền",
+    "tour_tab_desc": "Đổi loại tiền này sang loại khác? Hãy ghi lại ở đây. Giao dịch đổi không vào thu nhập hay chi tiêu, nhưng giữ cho số dư từng loại tiền chính xác.",
+    "tour_list_title": "Chỉ các giao dịch đổi",
+    "tour_list_desc": "Mỗi dòng cho biết bạn đã đưa bao nhiêu và thực nhận bao nhiêu. Nếu sai, sửa hoặc xóa ngay trong dòng đó."
   },
   "investments": {
     "title": "Đầu tư và tiền mã hóa",

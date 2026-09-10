@@ -153,7 +153,9 @@
     "add_transaction": "Tapahtuma",
     "add_transaction_desc": "tulo / meno",
     "add_goal": "Tavoite",
-    "add_goal_desc": "säästö"
+    "add_goal_desc": "säästö",
+    "add_exchange": "Vaihto",
+    "add_exchange_desc": "valuutasta valuuttaan"
   },
   "notifications": {
     "mark_all_read": "Merkitse kaikki luetuiksi",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Tavoitteesi",
     "tour_goals_desc": "Seuraa säästötavoitteidesi edistymistä täältä.",
     "tour_transactions_title": "Viimeisimmät tapahtumat",
-    "tour_transactions_desc": "Nopea pääsy uusimpiin tapahtumiisi."
+    "tour_transactions_desc": "Nopea pääsy uusimpiin tapahtumiisi.",
+    "tour_balance_title": "Saldo ja valuutat",
+    "tour_balance_desc": "Jos ansaitset yhdessä valuutassa ja kulutat toisessa, kirjaa vaihto — silloin saldo pysyy tarkkana. Vaihto ei ole tulo eikä meno: se vain siirtää rahaa valuuttojesi välillä.",
+    "balance_missing_exchange": "Saldosi valuutassa {{currency}} on miinuksella, muissa ei — vaihto näyttää jääneen kirjaamatta.",
+    "balance_record_exchange": "Kirjaa"
   },
   "alerts": {
     "account_needs_email": "Kirjauduit Telegramilla. Lisää sähköposti ja salasana asetuksiin, jotta et menetä pääsyä tiliisi.",
@@ -371,7 +377,11 @@
     "tab_goal": "Tavoite",
     "no_categories_expense": "Ei menokategorioita.",
     "no_categories_income": "Ei tulokategorioita.",
-    "save_transaction": "Tallenna tapahtuma"
+    "save_transaction": "Tallenna tapahtuma",
+    "title_exchange": "Valuutanvaihto",
+    "sub_exchange": "Siirtää rahaa valuuttojesi välillä — ei tulo eikä meno",
+    "tab_exchange": "Vaihto",
+    "save_exchange": "Tallenna vaihto"
   },
   "goal_form": {
     "icon": "Kuvake",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Kaikkien tavoitteidesi yhteenlaskettu säästö ja kuinka paljon on jäljellä.",
     "tour_cards_title": "Tavoitteesi",
     "tour_cards_desc": "Talleta, nosta tai tarkista kunkin tavoitteen talletushistoria täältä."
+  },
+  "exchanges": {
+    "section_title": "Valuutanvaihdot",
+    "add": "Lisää vaihto",
+    "empty": "Ei vielä kirjattuja vaihtoja",
+    "gave": "Annoit",
+    "got": "Sait",
+    "same_currency": "Valitse kaksi eri valuuttaa",
+    "not_a_transaction": "Vaihto ei ole tulo eikä meno: raha vain siirtyy valuuttojesi välillä, eivätkä raportit muutu.",
+    "note_placeholder": "Missä vaihdoit — pankki, vaihtopiste, sovellus",
+    "saved": "Vaihto tallennettu",
+    "save_error": "Vaihdon tallennus epäonnistui",
+    "delete_title": "Poista vaihto",
+    "delete_confirm": "Poistetaanko tämä vaihto? Rahat palaavat alkuperäiseen valuuttaan.",
+    "delete_success": "Vaihto poistettu",
+    "holdings": "Kirjaustesi mukaan",
+    "tab": "Vaihto",
+    "subtitle": "Valuuttojesi välillä siirretty raha",
+    "tour_tab_title": "Valuutanvaihdot",
+    "tour_tab_desc": "Vaihdatko yhden valuutan toiseen? Kirjaa se tähän. Vaihto pysyy tulojen ja menojen ulkopuolella mutta pitää valuuttakohtaisen saldon tarkkana.",
+    "tour_list_title": "Vain vaihdot",
+    "tour_list_desc": "Jokainen rivi kertoo, paljonko annoit ja paljonko todella sait. Jos meni väärin, korjaa tai poista suoraan riviltä."
   },
   "investments": {
     "title": "Sijoitukset ja kryptovaluutta",

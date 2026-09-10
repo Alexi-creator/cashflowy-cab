@@ -14,6 +14,8 @@ export interface MockApiOptions {
    * Defaults to the stub value (unlimited — `limit`/`remaining` null). Use {@link buildUsage}.
    */
   usage?: Record<string, unknown>
+  /** Override `/transactions/balance` — used to drive the multicurrency states. */
+  balance?: Record<string, unknown>
 }
 
 type UsageEntry = { used: number; limit: number | null; remaining: number | null }
@@ -95,7 +97,7 @@ export const MOCK_USER_PENDING_EMAIL = {
  * Call this BEFORE `page.goto(...)` so the first auth check is already mocked.
  */
 export async function mockApi(page: Page, options: MockApiOptions = {}): Promise<void> {
-  const { authenticated = true, user = MOCK_USER, usage } = options
+  const { authenticated = true, user = MOCK_USER, usage, balance } = options
 
   await blockThirdParty(page)
   await skipTourHint(page)
@@ -123,6 +125,10 @@ export async function mockApi(page: Page, options: MockApiOptions = {}): Promise
 
     if (path.endsWith("/subscriptions/usage") && usage) {
       return route.fulfill({ json: usage })
+    }
+
+    if (path.endsWith("/transactions/balance") && balance) {
+      return route.fulfill({ json: balance })
     }
 
     if (method === "GET") {

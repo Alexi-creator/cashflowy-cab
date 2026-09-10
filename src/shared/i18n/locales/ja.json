@@ -152,7 +152,9 @@
     "add_transaction": "取引",
     "add_transaction_desc": "収入 / 支出",
     "add_goal": "目標",
-    "add_goal_desc": "貯金"
+    "add_goal_desc": "貯金",
+    "add_exchange": "両替",
+    "add_exchange_desc": "通貨から通貨へ"
   },
   "notifications": {
     "mark_all_read": "すべて既読にする",
@@ -218,7 +220,11 @@
     "tour_goals_title": "あなたの目標",
     "tour_goals_desc": "ここで貯蓄目標への進捗を確認できます。",
     "tour_transactions_title": "最近の取引",
-    "tour_transactions_desc": "最新の取引にすばやくアクセスできます。"
+    "tour_transactions_desc": "最新の取引にすばやくアクセスできます。",
+    "tour_balance_title": "残高と通貨",
+    "tour_balance_desc": "ある通貨で受け取り、別の通貨で使っているなら、両替を記録してください。そうすれば残高が正確に保たれます。両替は収入でも支出でもなく、自分の通貨間で資金を移すだけです。",
+    "balance_missing_exchange": "{{currency}} の残高がマイナスで、他の通貨はそうではありません。両替が未記録のようです。",
+    "balance_record_exchange": "記録する"
   },
   "alerts": {
     "account_needs_email": "Telegram でログインしました。アカウントへのアクセスを失わないよう、設定でメールとパスワードを追加してください。",
@@ -360,7 +366,11 @@
     "tab_goal": "目標",
     "no_categories_expense": "支出カテゴリがありません。",
     "no_categories_income": "収入カテゴリがありません。",
-    "save_transaction": "取引を保存"
+    "save_transaction": "取引を保存",
+    "title_exchange": "両替",
+    "sub_exchange": "自分の通貨間で資金を移動します — 収入でも支出でもありません",
+    "tab_exchange": "両替",
+    "save_exchange": "両替を保存"
   },
   "goal_form": {
     "icon": "アイコン",
@@ -441,6 +451,28 @@
     "tour_summary_desc": "すべての目標の合計貯蓄額と残りの金額。",
     "tour_cards_title": "あなたの目標",
     "tour_cards_desc": "ここで入金、出金、または各目標の入金履歴を確認できます。"
+  },
+  "exchanges": {
+    "section_title": "両替",
+    "add": "両替を追加",
+    "empty": "両替の記録はまだありません",
+    "gave": "渡した額",
+    "got": "受け取った額",
+    "same_currency": "異なる2つの通貨を選んでください",
+    "not_a_transaction": "両替は収入でも支出でもありません。資金が自分の通貨間を移動するだけで、レポートは変わりません。",
+    "note_placeholder": "両替した場所 — 銀行、両替所、アプリ",
+    "saved": "両替を保存しました",
+    "save_error": "両替を保存できませんでした",
+    "delete_title": "両替を削除",
+    "delete_confirm": "この両替を削除しますか？資金は元の通貨に戻ります。",
+    "delete_success": "両替を削除しました",
+    "holdings": "記録によると",
+    "tab": "両替",
+    "subtitle": "自分の通貨間で移動した資金",
+    "tour_tab_title": "両替",
+    "tour_tab_desc": "ある通貨を別の通貨に換えますか？ここに記録してください。両替は収入・支出には入りませんが、通貨ごとの残高を正確に保ちます。",
+    "tour_list_title": "両替だけの一覧",
+    "tour_list_desc": "各行は渡した額と実際に受け取った額です。間違えたら、その行のまま修正または削除できます。"
   },
   "investments": {
     "title": "投資と暗号資産",

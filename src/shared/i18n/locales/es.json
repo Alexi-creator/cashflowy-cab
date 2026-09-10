@@ -153,7 +153,9 @@
     "add_transaction": "Transacción",
     "add_transaction_desc": "ingreso / gasto",
     "add_goal": "Objetivo",
-    "add_goal_desc": "ahorro"
+    "add_goal_desc": "ahorro",
+    "add_exchange": "Cambio",
+    "add_exchange_desc": "de divisa a divisa"
   },
   "notifications": {
     "mark_all_read": "Marcar todo como leído",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Tus metas",
     "tour_goals_desc": "Sigue aquí el progreso de tus metas de ahorro.",
     "tour_transactions_title": "Transacciones recientes",
-    "tour_transactions_desc": "Acceso rápido a tus transacciones más recientes."
+    "tour_transactions_desc": "Acceso rápido a tus transacciones más recientes.",
+    "tour_balance_title": "Saldo y divisas",
+    "tour_balance_desc": "Si ingresas en una divisa y gastas en otra, registra el cambio: así el saldo se mantiene exacto. Un cambio no es un ingreso ni un gasto, solo mueve dinero entre tus divisas.",
+    "balance_missing_exchange": "Tu saldo en {{currency}} es negativo y el de otras divisas no — parece faltar un cambio.",
+    "balance_record_exchange": "Registrar"
   },
   "alerts": {
     "account_needs_email": "Has iniciado sesión con Telegram. Añade un correo y una contraseña en los ajustes para no perder el acceso a tu cuenta.",
@@ -371,7 +377,11 @@
     "tab_goal": "Objetivo",
     "no_categories_expense": "No hay categorías de gastos.",
     "no_categories_income": "No hay categorías de ingresos.",
-    "save_transaction": "Guardar transacción"
+    "save_transaction": "Guardar transacción",
+    "title_exchange": "Cambio de divisas",
+    "sub_exchange": "Mueve dinero entre tus divisas — no es un ingreso ni un gasto",
+    "tab_exchange": "Cambio",
+    "save_exchange": "Guardar cambio"
   },
   "goal_form": {
     "icon": "Icono",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Total ahorrado en todas tus metas y cuánto queda.",
     "tour_cards_title": "Tus metas",
     "tour_cards_desc": "Deposita, retira o consulta el historial de aportes de cada meta aquí."
+  },
+  "exchanges": {
+    "section_title": "Cambios de divisas",
+    "add": "Añadir cambio",
+    "empty": "Aún no hay cambios registrados",
+    "gave": "Entregado",
+    "got": "Recibido",
+    "same_currency": "Elige dos divisas diferentes",
+    "not_a_transaction": "Un cambio no es un ingreso ni un gasto: el dinero solo se mueve entre tus divisas, así que tus informes no cambian.",
+    "note_placeholder": "Dónde cambiaste — banco, casa de cambio, app",
+    "saved": "Cambio guardado",
+    "save_error": "No se pudo guardar el cambio",
+    "delete_title": "Eliminar cambio",
+    "delete_confirm": "¿Eliminar este cambio? El dinero volverá a la divisa de origen.",
+    "delete_success": "Cambio eliminado",
+    "holdings": "Según tus registros",
+    "tab": "Cambio",
+    "subtitle": "Dinero movido entre tus divisas",
+    "tour_tab_title": "Cambios de divisas",
+    "tour_tab_desc": "¿Conviertes una divisa en otra? Regístralo aquí. Un cambio no entra en ingresos ni gastos, pero mantiene exacto tu saldo por divisa.",
+    "tour_list_title": "Solo cambios",
+    "tour_list_desc": "Cada fila muestra lo que entregaste y lo que recibiste de verdad. Si te equivocaste, corrígelo o elimínalo en la propia fila."
   },
   "investments": {
     "title": "Inversiones y cripto",

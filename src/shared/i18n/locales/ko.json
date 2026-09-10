@@ -152,7 +152,9 @@
     "add_transaction": "거래",
     "add_transaction_desc": "수입 / 지출",
     "add_goal": "목표",
-    "add_goal_desc": "저축"
+    "add_goal_desc": "저축",
+    "add_exchange": "환전",
+    "add_exchange_desc": "통화에서 통화로"
   },
   "notifications": {
     "mark_all_read": "모두 읽음으로 표시",
@@ -218,7 +220,11 @@
     "tour_goals_title": "내 목표",
     "tour_goals_desc": "여기서 저축 목표를 향한 진행 상황을 추적하세요.",
     "tour_transactions_title": "최근 거래",
-    "tour_transactions_desc": "최신 거래에 빠르게 액세스하세요."
+    "tour_transactions_desc": "최신 거래에 빠르게 액세스하세요.",
+    "tour_balance_title": "잔액과 통화",
+    "tour_balance_desc": "한 통화로 벌고 다른 통화로 쓴다면 환전을 기록하세요. 그래야 잔액이 정확하게 유지됩니다. 환전은 수입도 지출도 아니며, 보유 통화 사이에서 돈을 옮길 뿐입니다.",
+    "balance_missing_exchange": "{{currency}} 잔액이 마이너스인데 다른 통화는 그렇지 않습니다 — 환전이 기록되지 않은 것 같습니다.",
+    "balance_record_exchange": "기록하기"
   },
   "alerts": {
     "account_needs_email": "Telegram으로 로그인했습니다. 계정 접근 권한을 잃지 않도록 설정에서 이메일과 비밀번호를 추가하세요.",
@@ -360,7 +366,11 @@
     "tab_goal": "목표",
     "no_categories_expense": "지출 카테고리가 없습니다.",
     "no_categories_income": "수입 카테고리가 없습니다.",
-    "save_transaction": "거래 저장"
+    "save_transaction": "거래 저장",
+    "title_exchange": "환전",
+    "sub_exchange": "보유 통화 사이에서 돈을 옮깁니다 — 수입도 지출도 아닙니다",
+    "tab_exchange": "환전",
+    "save_exchange": "환전 저장"
   },
   "goal_form": {
     "icon": "아이콘",
@@ -441,6 +451,28 @@
     "tour_summary_desc": "모든 목표에서 저축한 총액과 남은 금액.",
     "tour_cards_title": "내 목표",
     "tour_cards_desc": "여기서 입금, 출금 또는 각 목표의 납입 내역을 확인하세요."
+  },
+  "exchanges": {
+    "section_title": "환전 내역",
+    "add": "환전 추가",
+    "empty": "아직 등록된 환전이 없습니다",
+    "gave": "지급",
+    "got": "수령",
+    "same_currency": "서로 다른 두 통화를 선택하세요",
+    "not_a_transaction": "환전은 수입도 지출도 아닙니다. 돈이 보유 통화 사이를 이동할 뿐이라 리포트는 바뀌지 않습니다.",
+    "note_placeholder": "환전한 곳 — 은행, 환전소, 앱",
+    "saved": "환전을 저장했습니다",
+    "save_error": "환전을 저장하지 못했습니다",
+    "delete_title": "환전 삭제",
+    "delete_confirm": "이 환전을 삭제할까요? 돈은 원래 통화로 돌아갑니다.",
+    "delete_success": "환전을 삭제했습니다",
+    "holdings": "기록에 따르면",
+    "tab": "환전",
+    "subtitle": "보유 통화 사이에서 옮긴 돈",
+    "tour_tab_title": "환전",
+    "tour_tab_desc": "한 통화를 다른 통화로 바꾸시나요? 여기에 기록하세요. 환전은 수입·지출에 들어가지 않지만 통화별 잔액을 정확하게 유지합니다.",
+    "tour_list_title": "환전 기록만",
+    "tour_list_desc": "각 행은 지급한 금액과 실제로 받은 금액입니다. 잘못됐다면 그 행에서 바로 수정하거나 삭제하세요."
   },
   "investments": {
     "title": "투자 및 암호화폐",

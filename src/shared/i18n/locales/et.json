@@ -153,7 +153,9 @@
     "add_transaction": "Tehing",
     "add_transaction_desc": "tulu / kulu",
     "add_goal": "Eesmärk",
-    "add_goal_desc": "säästmine"
+    "add_goal_desc": "säästmine",
+    "add_exchange": "Vahetus",
+    "add_exchange_desc": "valuutast valuutasse"
   },
   "notifications": {
     "mark_all_read": "Märgi kõik loetuks",
@@ -220,7 +222,11 @@
     "tour_goals_title": "Sinu eesmärgid",
     "tour_goals_desc": "Jälgi siin oma säästueesmärkide edenemist.",
     "tour_transactions_title": "Viimased tehingud",
-    "tour_transactions_desc": "Kiire juurdepääs sinu uusimatele tehingutele."
+    "tour_transactions_desc": "Kiire juurdepääs sinu uusimatele tehingutele.",
+    "tour_balance_title": "Saldo ja valuutad",
+    "tour_balance_desc": "Kui teenid ühes valuutas ja kulutad teises, märgi vahetus üles — siis jääb saldo täpseks. Vahetus pole tulu ega kulu: see üksnes liigutab raha sinu valuutade vahel.",
+    "balance_missing_exchange": "Sinu {{currency}} saldo on miinuses, teistes valuutades mitte — vahetus näib olevat lisamata.",
+    "balance_record_exchange": "Lisa"
   },
   "alerts": {
     "account_needs_email": "Logisid sisse Telegrami kaudu. Lisa seadetes e-post ja parool, et mitte kaotada juurdepääsu oma kontole.",
@@ -371,7 +377,11 @@
     "tab_goal": "Eesmärk",
     "no_categories_expense": "Kulukategooriaid pole.",
     "no_categories_income": "Tulukategooriaid pole.",
-    "save_transaction": "Salvesta tehing"
+    "save_transaction": "Salvesta tehing",
+    "title_exchange": "Valuutavahetus",
+    "sub_exchange": "Liigutab raha sinu valuutade vahel — pole tulu ega kulu",
+    "tab_exchange": "Vahetus",
+    "save_exchange": "Salvesta vahetus"
   },
   "goal_form": {
     "icon": "Ikoon",
@@ -453,6 +463,28 @@
     "tour_summary_desc": "Kokku säästetu kõigi sinu eesmärkide lõikes ja kui palju on veel vaja.",
     "tour_cards_title": "Sinu eesmärgid",
     "tour_cards_desc": "Tee siin sissemakseid, väljamakseid või vaata iga eesmärgi sissemaksete ajalugu."
+  },
+  "exchanges": {
+    "section_title": "Valuutavahetused",
+    "add": "Lisa vahetus",
+    "empty": "Vahetusi pole veel lisatud",
+    "gave": "Andsid",
+    "got": "Said",
+    "same_currency": "Vali kaks erinevat valuutat",
+    "not_a_transaction": "Vahetus pole tulu ega kulu: raha liigub ainult sinu valuutade vahel ja aruanded ei muutu.",
+    "note_placeholder": "Kus vahetasid — pank, vahetuspunkt, rakendus",
+    "saved": "Vahetus salvestatud",
+    "save_error": "Vahetust ei õnnestunud salvestada",
+    "delete_title": "Kustuta vahetus",
+    "delete_confirm": "Kustutada see vahetus? Raha läheb tagasi algsesse valuutasse.",
+    "delete_success": "Vahetus kustutatud",
+    "holdings": "Sinu kirjete järgi",
+    "tab": "Vahetus",
+    "subtitle": "Sinu valuutade vahel liigutatud raha",
+    "tour_tab_title": "Valuutavahetused",
+    "tour_tab_desc": "Vahetad ühe valuuta teise vastu? Märgi see siia. Vahetus jääb tuludest ja kuludest välja, kuid hoiab valuutade saldod täpsena.",
+    "tour_list_title": "Ainult vahetused",
+    "tour_list_desc": "Iga rida näitab, kui palju andsid ja kui palju tegelikult said. Kui eksisid, paranda või kustuta otse real."
   },
   "investments": {
     "title": "Investeeringud ja krüpto",
