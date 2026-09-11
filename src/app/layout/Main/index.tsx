@@ -4,7 +4,6 @@ import { Suspense } from "react"
 import { Outlet, useLocation } from "react-router-dom"
 import { AccountAlert, EmailVerifyAlert, TelegramConnectAlert } from "@/modules/auth/ui"
 import { RouteNames } from "@/shared/config/routeNames"
-import { useLoaderStore } from "@/shared/store/loaderStore"
 
 import classes from "./styles.module.css"
 
@@ -12,19 +11,17 @@ const FILL_HEIGHT_ROUTES = new Set<string>([RouteNames.Transactions])
 
 /**
  * Main content area of the app (AppShell.Main).
- * Shows the global LoadingOverlay, AccountAlert, and renders child routes via `<Outlet />`.
+ * Shows the account alerts and renders child routes via `<Outlet />`, with a LoadingOverlay
+ * while a lazy route chunk is still loading.
  * On the transactions page it disables scrolling (overflow: hidden) for the fixed-height table.
  * Takes no props.
  */
 export function Main() {
   const { pathname } = useLocation()
-  const { isLoading } = useLoaderStore()
   const isFillHeight = FILL_HEIGHT_ROUTES.has(pathname)
 
   return (
     <AppShell.Main classNames={{ main: clsx(classes.root, isFillHeight && classes.fill) }}>
-      <LoadingOverlay visible={isLoading} />
-
       <AccountAlert />
       <EmailVerifyAlert />
       <TelegramConnectAlert />
