@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "biome check . && npm run lint:boundaries",
+    "lint": "biome check . && bun run lint:boundaries",
     "format": "biome format --write .",
     "preview": "vite preview",
     "ngrok": "ngrok http 5173",
@@ -19,7 +19,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:report": "playwright show-report",
-    "lint:boundaries": "node scripts/check-boundaries.mjs"
+    "lint:boundaries": "bun scripts/check-boundaries.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -35,12 +35,12 @@
     "date-fns": "^4.3.0",
     "dayjs": "^1.11.21",
     "driver.js": "^1.8.0",
-    "i18next": "^26.2.0",
+    "i18next": "^26.4.2",
     "mantine-datatable": "^9.2.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-hook-form": "^7.76.0",
-    "react-i18next": "^17.0.8",
+    "react-i18next": "^17.0.13",
     "react-router-dom": "^7.15.1",
     "zod": "^4.4.3",
     "zustand": "^5.0.13"
@@ -52,8 +52,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "typescript": "~6.0.2",
-    "typescript-plugin-css-modules": "^5.2.0",
+    "typescript": "~7.0.2",
     "vite": "^8.0.12"
   }
 }

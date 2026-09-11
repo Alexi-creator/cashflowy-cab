@@ -41,13 +41,13 @@ This repository contains the **frontend** (the user cabinet). It talks to a sepa
 
 ### Prerequisites
 
-- **Node.js 22+** and npm
+- **[Bun](https://bun.com) 1.2+**
 - A running instance of the LimeBalance **backend** (defaults to `http://localhost:3000`)
 
 ### 1. Install dependencies
 
 ```bash
-npm install
+bun install
 ```
 
 ### 2. Configure environment
@@ -67,7 +67,7 @@ cp .env.example .env
 ### 3. Run the dev server
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 The app starts on **http://localhost:5173**. In dev, requests to `/api` are proxied to the backend (`http://localhost:3000` by default — see [vite.config.ts](vite.config.ts)).
@@ -78,14 +78,14 @@ The app starts on **http://localhost:5173**. In dev, requests to `/api` are prox
 
 | Command | What it does |
 |---------|--------------|
-| `npm run dev` | Start the Vite dev server with HMR. |
-| `npm run build` | Type-check and build the production bundle to `dist/`. |
-| `npm run preview` | Preview the production build locally. |
-| `npm run lint` | Lint the project with Biome. |
-| `npm run format` | Auto-format the codebase with Biome. |
-| `npm run ngrok` | Expose the dev server via ngrok (handy for testing Telegram auth). |
-| `npm run test:e2e` | Run the Playwright end-to-end tests. |
-| `npm run test:e2e:ui` | Run the E2E tests in interactive UI mode. |
+| `bun run dev` | Start the Vite dev server with HMR. |
+| `bun run build` | Type-check and build the production bundle to `dist/`. |
+| `bun run preview` | Preview the production build locally. |
+| `bun run lint` | Lint the project with Biome. |
+| `bun run format` | Auto-format the codebase with Biome. |
+| `bun run ngrok` | Expose the dev server via ngrok (handy for testing Telegram auth). |
+| `bun run test:e2e` | Run the Playwright end-to-end tests. |
+| `bun run test:e2e:ui` | Run the E2E tests in interactive UI mode. |
 
 ---
 
@@ -94,8 +94,8 @@ The app starts on **http://localhost:5173**. In dev, requests to `/api` are prox
 End-to-end tests are written with [Playwright](https://playwright.dev/) and live in [e2e/](e2e/). They run the real app in a browser **without a backend** — every `/api/**` request is mocked at the network layer (reusing the app's own stub data), so the suite is fast and deterministic.
 
 ```bash
-npx playwright install chromium   # one-time: download the browser
-npm run test:e2e                  # run the suite (auto-starts the dev server)
+bunx playwright install chromium   # one-time: download the browser
+bun run test:e2e                   # run the suite (auto-starts the dev server)
 ```
 
 See [e2e/README.md](e2e/README.md) for how the mocking and fixtures work.
@@ -237,7 +237,7 @@ its public entry; `./` and `../` mean your own, so you may go deep.
 
 Rules 1 and 5 are checked by Biome (so they surface in the editor); rules 2–4 need to know
 where a path actually leads, which Biome's glob matching cannot do, so they live in
-[scripts/check-boundaries.mjs](scripts/check-boundaries.mjs). Both run on `npm run lint`, and a
+[scripts/check-boundaries.mjs](scripts/check-boundaries.mjs). Both run on `bun run lint`, and a
 new module falls under all of them without any config change.
 
 > **`sideEffects` in package.json is load-bearing.** The router imports route guards through

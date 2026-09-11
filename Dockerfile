@@ -1,23 +1,24 @@
 # syntax=docker/dockerfile:1
 
 # --- deps/dev stage: для локального dev через docker compose ---
-FROM node:22-alpine AS dev
+FROM oven/bun:1.4-alpine AS dev
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 COPY . .
 EXPOSE 5173
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["bun", "run", "dev", "--host"]
 
 # --- builder stage: сборка статики ---
-FROM node:22-alpine AS builder
+FROM oven/bun:1.4-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 COPY . .
-RUN npm run build
+RUN bun run build
 
 # --- production stage: nginx отдаёт статику SPA ---
+# Бандл собран, дальше рантайм не нужен: прод-образ несёт только файлы и nginx.
 FROM nginx:alpine AS production
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf

@@ -7,10 +7,10 @@ network layer, so the suite is fast, deterministic, and runs anywhere.
 ## Running
 
 ```bash
-npm run test:e2e          # headless run (starts the dev server automatically)
-npm run test:e2e:ui       # interactive UI mode
-npm run test:e2e:headed   # watch the browser
-npm run test:e2e:report   # open the last HTML report
+bun run test:e2e          # headless run (starts the dev server automatically)
+bun run test:e2e:ui       # interactive UI mode
+bun run test:e2e:headed   # watch the browser
+bun run test:e2e:report   # open the last HTML report
 ```
 
 The Vite dev server is started automatically (see `webServer` in

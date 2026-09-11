@@ -32,7 +32,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "npm run dev",
+    command: "bun run dev",
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
