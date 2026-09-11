@@ -76,9 +76,17 @@ test.describe("Currency exchanges", () => {
     await expect(page.getByText("Currency exchanges").last()).toBeVisible()
     await page.keyboard.press("Escape")
 
-    // The exchanges view never mentions filters or search, which are not there.
+    // Steps are built when the tour opens, from the view on screen at that moment — so the
+    // exchanges table has to have actually replaced the transactions one first. Clicking the
+    // tab is not enough: until React commits the switch, "Show tour" still builds the
+    // transactions tour, and this test then walks the wrong three steps.
     await page.getByRole("tab", { name: "Exchange" }).click()
+    await expect(page.getByText("Wise")).toBeVisible()
+
     await page.getByRole("button", { name: "Show tour" }).click()
+    await expect(page.getByText("Currency exchanges").last()).toBeVisible()
+
+    // The exchanges view never mentions filters or search, which are not there.
     await expect(page.getByText("Filter and search")).toHaveCount(0)
     await next.click()
     await expect(page.getByText("Exchanges only")).toBeVisible()
