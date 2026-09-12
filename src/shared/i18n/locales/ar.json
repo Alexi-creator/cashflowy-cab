@@ -150,7 +150,11 @@
     "tx_count_two": "معاملتان",
     "tx_count_few": "{{count}} معاملات",
     "tx_count_many": "{{count}} معاملة",
-    "tx_count_other": "{{count}} معاملة"
+    "tx_count_other": "{{count}} معاملة",
+    "today": "اليوم",
+    "yesterday": "أمس",
+    "select": "تحديد",
+    "done": "تم"
   },
   "header": {
     "add": "إضافة",
@@ -315,7 +319,9 @@
     "tour_add_title": "إضافة عملية",
     "tour_add_desc": "تم تعيينها بالفعل كدخل/مصروف — أضف واحدة بنقرة.",
     "tour_list_title": "التصفية والبحث",
-    "tour_list_desc": "صفّي حسب النوع أو الفئة أو العملة أو التاريخ، وابحث في عملياتك هنا."
+    "tour_list_desc": "صفّي حسب النوع أو الفئة أو العملة أو التاريخ، وابحث في عملياتك هنا.",
+    "details_title": "تفاصيل المعاملة",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "الفئات",

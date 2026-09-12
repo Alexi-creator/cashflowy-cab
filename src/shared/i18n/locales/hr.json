@@ -147,7 +147,11 @@
     "type_income": "+ Prihod",
     "tx_count_one": "{{count}} transakcija",
     "tx_count_few": "{{count}} transakcije",
-    "tx_count_other": "{{count}} transakcija"
+    "tx_count_other": "{{count}} transakcija",
+    "today": "Danas",
+    "yesterday": "Jučer",
+    "select": "Odaberi",
+    "done": "Gotovo"
   },
   "header": {
     "add": "Dodaj",
@@ -294,7 +298,9 @@
     "tour_add_title": "Dodaj transakciju",
     "tour_add_desc": "Već postavljeno na prihod/trošak — dodajte jednim klikom.",
     "tour_list_title": "Filtriranje i pretraga",
-    "tour_list_desc": "Filtrirajte prema vrsti, kategoriji, valuti ili datumu, i pretražujte svoje transakcije ovdje."
+    "tour_list_desc": "Filtrirajte prema vrsti, kategoriji, valuti ili datumu, i pretražujte svoje transakcije ovdje.",
+    "details_title": "Detalji transakcije",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorije",

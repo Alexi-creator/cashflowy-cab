@@ -147,7 +147,11 @@
     "type_income": "+ Przychód",
     "tx_count_one": "{{count}} transakcja",
     "tx_count_few": "{{count}} transakcje",
-    "tx_count_many": "{{count}} transakcji"
+    "tx_count_many": "{{count}} transakcji",
+    "today": "Dziś",
+    "yesterday": "Wczoraj",
+    "select": "Wybierz",
+    "done": "Gotowe"
   },
   "header": {
     "add": "Dodaj",
@@ -294,7 +298,9 @@
     "tour_add_title": "Dodaj transakcję",
     "tour_add_desc": "Już ustawiona jako przychód/wydatek — dodaj ją jednym kliknięciem.",
     "tour_list_title": "Filtrowanie i wyszukiwanie",
-    "tour_list_desc": "Filtruj według typu, kategorii, waluty lub daty i wyszukuj tutaj swoje transakcje."
+    "tour_list_desc": "Filtruj według typu, kategorii, waluty lub daty i wyszukuj tutaj swoje transakcje.",
+    "details_title": "Szczegóły transakcji",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorie",

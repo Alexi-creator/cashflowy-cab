@@ -145,7 +145,11 @@
     "nothing_found": "결과 없음",
     "type_expense": "− 지출",
     "type_income": "+ 수입",
-    "tx_count_other": "거래 {{count}}건"
+    "tx_count_other": "거래 {{count}}건",
+    "today": "오늘",
+    "yesterday": "어제",
+    "select": "선택",
+    "done": "완료"
   },
   "header": {
     "add": "추가",
@@ -280,7 +284,9 @@
     "tour_add_title": "거래 추가",
     "tour_add_desc": "이미 수입/지출로 설정되어 있습니다 — 클릭 한 번으로 추가하세요.",
     "tour_list_title": "필터 및 검색",
-    "tour_list_desc": "유형, 카테고리, 통화 또는 날짜로 필터링하고 여기서 거래를 검색하세요."
+    "tour_list_desc": "유형, 카테고리, 통화 또는 날짜로 필터링하고 여기서 거래를 검색하세요.",
+    "details_title": "거래 상세",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "카테고리",

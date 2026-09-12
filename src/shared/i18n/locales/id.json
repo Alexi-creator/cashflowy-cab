@@ -145,7 +145,11 @@
     "nothing_found": "Tidak ada hasil",
     "type_expense": "− Pengeluaran",
     "type_income": "+ Pemasukan",
-    "tx_count_other": "{{count}} transaksi"
+    "tx_count_other": "{{count}} transaksi",
+    "today": "Hari ini",
+    "yesterday": "Kemarin",
+    "select": "Pilih",
+    "done": "Selesai"
   },
   "header": {
     "add": "Tambah",
@@ -280,7 +284,9 @@
     "tour_add_title": "Tambah transaksi",
     "tour_add_desc": "Sudah diatur sebagai pemasukan/pengeluaran — tambahkan dengan satu klik.",
     "tour_list_title": "Filter dan cari",
-    "tour_list_desc": "Filter berdasarkan jenis, kategori, mata uang, atau tanggal, dan cari transaksi Anda di sini."
+    "tour_list_desc": "Filter berdasarkan jenis, kategori, mata uang, atau tanggal, dan cari transaksi Anda di sini.",
+    "details_title": "Rincian transaksi",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategori",

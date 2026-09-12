@@ -147,7 +147,11 @@
     "type_income": "+ Pajamos",
     "tx_count_one": "{{count}} operacija",
     "tx_count_few": "{{count}} operacijos",
-    "tx_count_other": "{{count}} operacijų"
+    "tx_count_other": "{{count}} operacijų",
+    "today": "Šiandien",
+    "yesterday": "Vakar",
+    "select": "Pasirinkti",
+    "done": "Baigta"
   },
   "header": {
     "add": "Pridėti",
@@ -294,7 +298,9 @@
     "tour_add_title": "Pridėti operaciją",
     "tour_add_desc": "Jau nustatyta kaip pajamos/išlaidos — pridėkite vienu paspaudimu.",
     "tour_list_title": "Filtravimas ir paieška",
-    "tour_list_desc": "Filtruokite pagal tipą, kategoriją, valiutą ar datą ir čia ieškokite savo operacijų."
+    "tour_list_desc": "Filtruokite pagal tipą, kategoriją, valiutą ar datą ir čia ieškokite savo operacijų.",
+    "details_title": "Operacijos detalės",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorijos",

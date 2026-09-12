@@ -148,7 +148,11 @@
     "tx_count_one": "עסקה {{count}}",
     "tx_count_two": "{{count}} עסקאות",
     "tx_count_many": "{{count}} עסקאות",
-    "tx_count_other": "{{count}} עסקאות"
+    "tx_count_other": "{{count}} עסקאות",
+    "today": "היום",
+    "yesterday": "אתמול",
+    "select": "בחירה",
+    "done": "סיום"
   },
   "header": {
     "add": "הוסף",
@@ -301,7 +305,9 @@
     "tour_add_title": "הוספת תנועה",
     "tour_add_desc": "כבר מוגדר כהכנסה/הוצאה — הוסיפו אחת בלחיצה.",
     "tour_list_title": "סינון וחיפוש",
-    "tour_list_desc": "סננו לפי סוג, קטגוריה, מטבע או תאריך, וחפשו את התנועות שלכם כאן."
+    "tour_list_desc": "סננו לפי סוג, קטגוריה, מטבע או תאריך, וחפשו את התנועות שלכם כאן.",
+    "details_title": "פרטי העסקה",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "קטגוריות",

@@ -146,7 +146,11 @@
     "type_expense": "− Dépense",
     "type_income": "+ Revenu",
     "tx_count_one": "{{count}} transaction",
-    "tx_count_other": "{{count}} transactions"
+    "tx_count_other": "{{count}} transactions",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "select": "Sélectionner",
+    "done": "Terminé"
   },
   "header": {
     "add": "Ajouter",
@@ -287,7 +291,9 @@
     "tour_add_title": "Ajouter une transaction",
     "tour_add_desc": "Déjà défini sur revenu/dépense — ajoutez-en une en un clic.",
     "tour_list_title": "Filtrer et rechercher",
-    "tour_list_desc": "Filtrez par type, catégorie, devise ou date, et recherchez vos transactions ici."
+    "tour_list_desc": "Filtrez par type, catégorie, devise ou date, et recherchez vos transactions ici.",
+    "details_title": "Détail de la transaction",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Catégories",

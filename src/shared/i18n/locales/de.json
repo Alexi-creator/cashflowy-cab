@@ -146,7 +146,11 @@
     "type_expense": "− Ausgabe",
     "type_income": "+ Einnahme",
     "tx_count_one": "{{count}} Transaktion",
-    "tx_count_other": "{{count}} Transaktionen"
+    "tx_count_other": "{{count}} Transaktionen",
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "select": "Auswählen",
+    "done": "Fertig"
   },
   "header": {
     "add": "Hinzufügen",
@@ -287,7 +291,9 @@
     "tour_add_title": "Transaktion hinzufügen",
     "tour_add_desc": "Bereits auf Einnahme/Ausgabe eingestellt — mit einem Klick hinzufügen.",
     "tour_list_title": "Filtern und suchen",
-    "tour_list_desc": "Filtern Sie nach Typ, Kategorie, Währung oder Datum, und durchsuchen Sie hier Ihre Transaktionen."
+    "tour_list_desc": "Filtern Sie nach Typ, Kategorie, Währung oder Datum, und durchsuchen Sie hier Ihre Transaktionen.",
+    "details_title": "Transaktionsdetails",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorien",

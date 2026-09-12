@@ -148,7 +148,11 @@
     "tx_count_one": "{{count}} transakcija",
     "tx_count_two": "{{count}} transakciji",
     "tx_count_few": "{{count}} transakcije",
-    "tx_count_other": "{{count}} transakcij"
+    "tx_count_other": "{{count}} transakcij",
+    "today": "Danes",
+    "yesterday": "Včeraj",
+    "select": "Izberi",
+    "done": "Končano"
   },
   "header": {
     "add": "Dodaj",
@@ -301,7 +305,9 @@
     "tour_add_title": "Dodaj transakcijo",
     "tour_add_desc": "Že nastavljeno na prihodek/odhodek — dodajte ga z enim klikom.",
     "tour_list_title": "Filtriranje in iskanje",
-    "tour_list_desc": "Filtrirajte po vrsti, kategoriji, valuti ali datumu ter tukaj iščite svoje transakcije."
+    "tour_list_desc": "Filtrirajte po vrsti, kategoriji, valuti ali datumu ter tukaj iščite svoje transakcije.",
+    "details_title": "Podrobnosti transakcije",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorije",

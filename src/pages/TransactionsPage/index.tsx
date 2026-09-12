@@ -18,7 +18,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { useCategories } from "@/modules/categories/api/useCategories"
-import { ExchangeFormModal, ExchangesTable } from "@/modules/exchanges/ui"
+import { ExchangeFormModal, ExchangesMobileList, ExchangesTable } from "@/modules/exchanges/ui"
 import { useUsage } from "@/modules/subscription/api/useUsage"
 import { isLimitBlocked } from "@/modules/subscription/lib/plan"
 import { LimitAlert } from "@/modules/subscription/ui"
@@ -32,6 +32,7 @@ import {
   BulkDeleteModal,
   TransactionFormModal,
   TransactionsFilters,
+  TransactionsMobileList,
   TransactionsTable,
   TransactionsToolbar,
 } from "@/modules/transactions/ui"
@@ -40,12 +41,19 @@ import { useUrlParams } from "@/shared/hooks/useUrlParams"
 import { useModalStore } from "@/shared/store/modalStore"
 import { TourTriggerButton } from "@/shared/ui/TourTriggerButton"
 
+import classes from "./styles.module.css"
+
 export function TransactionsPage() {
   const { t } = useTranslation()
   const theme = useMantineTheme()
   // below `md` the filters live in a bottom drawer whose handle is fixed to the viewport
   // edge — reserve space so it never covers the table footer/pagination.
   const isDesktop = useMediaQuery(`(min-width: ${theme.breakpoints.md})`, true, {
+    getInitialValueInEffect: false,
+  })
+  // Below `sm` the five-column table asks for ~1000px on a ~375px screen, so that view is a
+  // card list instead. Resolved synchronously (no SSR) to avoid rendering the wrong one first.
+  const isTableView = useMediaQuery(`(min-width: ${theme.breakpoints.sm})`, true, {
     getInitialValueInEffect: false,
   })
   const [params, setParams] = useUrlParams(transactionsParamsSchema)
@@ -84,6 +92,19 @@ export function TransactionsPage() {
   const transactionsBlocked = isLimitBlocked(usage?.transactions)
 
   const [selectedRecords, setSelectedRecords] = useState<Transaction[]>([])
+  // The card list has no checkbox column — bulk selection is a mode toggled from the toolbar,
+  // so a plain tap can keep opening the transaction's details.
+  const [selectionMode, setSelectionMode] = useState(false)
+
+  const toggleSelectionMode = () => {
+    setSelectionMode((on) => !on)
+    setSelectedRecords([])
+  }
+
+  const goToPage = (page: number) => {
+    setSelectedRecords([])
+    setParams({ page })
+  }
 
   const openAddModal = () =>
     openModal({ size: "lg", centered: true, children: <TransactionFormModal /> })
@@ -211,11 +232,8 @@ export function TransactionsPage() {
 
       <Paper
         data-tour="tx-list"
+        className={classes.card}
         style={{
-          flex: 1,
-          overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
           // Floor for the card so the table never collapses to nothing on a short screen.
           // On a tall screen flex:1 grows past this and the table owns its internal scroll;
           // on a short screen the card holds this height and Main scrolls to reach it.
@@ -224,7 +242,11 @@ export function TransactionsPage() {
         }}
       >
         {isExchangesView ? (
-          <ExchangesTable />
+          isTableView ? (
+            <ExchangesTable />
+          ) : (
+            <ExchangesMobileList />
+          )
         ) : (
           <>
             <TransactionsFilters params={params} setParams={setParams} />
@@ -237,25 +259,42 @@ export function TransactionsPage() {
               selectedCount={selectedRecords.length}
               onClearSelection={() => setSelectedRecords([])}
               onBulkDelete={openBulkDelete}
+              showSelectionToggle={!isTableView}
+              selectionMode={selectionMode}
+              onToggleSelectionMode={toggleSelectionMode}
             />
 
-            <TransactionsTable
-              transactions={items}
-              total={total}
-              page={params.page}
-              onPageChange={(page) => {
-                setSelectedRecords([])
-                setParams({ page })
-              }}
-              recordsPerPage={params.limit}
-              onRecordsPerPageChange={(limit) => setParams({ limit, page: 1 })}
-              fetching={isLoading || isPlaceholderData}
-              isError={isError}
-              selectedRecords={selectedRecords}
-              onSelectedRecordsChange={setSelectedRecords}
-              summary={summary}
-              type={params.type}
-            />
+            {isTableView ? (
+              <TransactionsTable
+                transactions={items}
+                total={total}
+                page={params.page}
+                onPageChange={goToPage}
+                recordsPerPage={params.limit}
+                onRecordsPerPageChange={(limit) => setParams({ limit, page: 1 })}
+                fetching={isLoading || isPlaceholderData}
+                isError={isError}
+                selectedRecords={selectedRecords}
+                onSelectedRecordsChange={setSelectedRecords}
+                summary={summary}
+                type={params.type}
+              />
+            ) : (
+              <TransactionsMobileList
+                transactions={items}
+                total={total}
+                page={params.page}
+                onPageChange={goToPage}
+                recordsPerPage={params.limit}
+                fetching={isLoading || isPlaceholderData}
+                isError={isError}
+                selectedRecords={selectedRecords}
+                onSelectedRecordsChange={setSelectedRecords}
+                selectionMode={selectionMode}
+                summary={summary}
+                type={params.type}
+              />
+            )}
           </>
         )}
       </Paper>

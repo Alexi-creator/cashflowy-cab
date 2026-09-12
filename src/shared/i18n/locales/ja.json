@@ -145,7 +145,11 @@
     "nothing_found": "見つかりません",
     "type_expense": "− 支出",
     "type_income": "+ 収入",
-    "tx_count_other": "{{count}} 件の取引"
+    "tx_count_other": "{{count}} 件の取引",
+    "today": "今日",
+    "yesterday": "昨日",
+    "select": "選択",
+    "done": "完了"
   },
   "header": {
     "add": "追加",
@@ -280,7 +284,9 @@
     "tour_add_title": "取引を追加",
     "tour_add_desc": "すでに収入/支出が設定されています — ワンクリックで追加できます。",
     "tour_list_title": "絞り込みと検索",
-    "tour_list_desc": "種類、カテゴリー、通貨、日付で絞り込み、ここで取引を検索できます。"
+    "tour_list_desc": "種類、カテゴリー、通貨、日付で絞り込み、ここで取引を検索できます。",
+    "details_title": "取引の詳細",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "カテゴリ",

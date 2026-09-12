@@ -145,7 +145,11 @@
     "nothing_found": "未找到",
     "type_expense": "− 支出",
     "type_income": "+ 收入",
-    "tx_count_other": "{{count}} 笔交易"
+    "tx_count_other": "{{count}} 笔交易",
+    "today": "今天",
+    "yesterday": "昨天",
+    "select": "选择",
+    "done": "完成"
   },
   "header": {
     "add": "添加",
@@ -280,7 +284,9 @@
     "tour_add_title": "添加交易",
     "tour_add_desc": "已设置为收入/支出 — 一键添加。",
     "tour_list_title": "筛选和搜索",
-    "tour_list_desc": "按类型、分类、货币或日期筛选，并在此处搜索您的交易。"
+    "tour_list_desc": "按类型、分类、货币或日期筛选，并在此处搜索您的交易。",
+    "details_title": "交易详情",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "分类",

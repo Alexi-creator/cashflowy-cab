@@ -65,7 +65,10 @@ import { CoinIcon } from "../CoinIcon"
 import { DeletePositionConfirm } from "../DeletePositionConfirm"
 import { PositionForm } from "../PositionForm"
 import { PositionNotes } from "../PositionNotes"
+import { PositionsMobileList } from "../PositionsMobileList"
 import { POSITIONS_PAGE_SIZE_OPTIONS, positionsParamsSchema, storePageSize } from "./config"
+
+import classes from "./styles.module.css"
 
 interface Props {
   accounts: ExchangeAccount[]
@@ -88,6 +91,12 @@ export function PositionsSection({ accounts }: Props) {
   // Below `md` the filter controls don't fit in a row — they move into a bottom drawer,
   // same pattern as the transactions table (see MobileFilterSheet).
   const isDesktop = useMediaQuery(`(min-width: ${theme.breakpoints.md})`, true, {
+    getInitialValueInEffect: false,
+  })
+  // Below `sm` the seventeen-column table asks for well over 1500px on a ~375px screen, so that
+  // view is a card list instead (same trade-off as the transactions table). Resolved
+  // synchronously (no SSR) to avoid rendering the wrong one first.
+  const isTableView = useMediaQuery(`(min-width: ${theme.breakpoints.sm})`, true, {
     getInitialValueInEffect: false,
   })
   // Callback ref (state, not useRef): the table wrapper mounts conditionally (behind the
@@ -402,7 +411,7 @@ export function PositionsSection({ accounts }: Props) {
         caption={pnlCaption}
       />
 
-      <Paper>
+      <Paper className={classes.card}>
         <Group
           data-tour="inv-journal-filters"
           justify="space-between"
@@ -488,6 +497,8 @@ export function PositionsSection({ accounts }: Props) {
             <Text size="sm" c="dimmed" ta="center" py="xl">
               {t("investments.pos_empty")}
             </Text>
+          ) : !isTableView ? (
+            <PositionsMobileList positions={items} accounts={accounts} />
           ) : (
             <Box ref={setTableScrollEl} style={{ overflowX: "auto" }}>
               {/* The table defaults to width:100%, which lets the browser's auto layout squeeze
@@ -811,6 +822,10 @@ export function PositionsSection({ accounts }: Props) {
               {totalPages > 1 && (
                 <Pagination
                   size="sm"
+                  // on a phone the page numbers in between don't fit — prev/next plus the
+                  // current page is the whole usable control there
+                  siblings={isTableView ? 1 : 0}
+                  boundaries={isTableView ? 1 : 0}
                   total={totalPages}
                   value={urlParams.page}
                   onChange={(page) => setParams({ page })}

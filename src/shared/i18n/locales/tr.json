@@ -146,7 +146,11 @@
     "type_expense": "− Gider",
     "type_income": "+ Gelir",
     "tx_count_one": "{{count}} işlem",
-    "tx_count_other": "{{count}} işlem"
+    "tx_count_other": "{{count}} işlem",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "select": "Seç",
+    "done": "Bitti"
   },
   "header": {
     "add": "Ekle",
@@ -287,7 +291,9 @@
     "tour_add_title": "İşlem ekle",
     "tour_add_desc": "Zaten gelir/gider olarak ayarlandı — tek tıklamayla ekleyin.",
     "tour_list_title": "Filtrele ve ara",
-    "tour_list_desc": "Türe, kategoriye, para birimine veya tarihe göre filtreleyin ve işlemlerinizi burada arayın."
+    "tour_list_desc": "Türe, kategoriye, para birimine veya tarihe göre filtreleyin ve işlemlerinizi burada arayın.",
+    "details_title": "İşlem detayları",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategoriler",

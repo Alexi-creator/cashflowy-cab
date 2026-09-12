@@ -1,11 +1,18 @@
 import { Button, Group, Text } from "@mantine/core"
-import { IconTrash, IconX } from "@tabler/icons-react"
+import { IconCheck, IconListCheck, IconTrash, IconX } from "@tabler/icons-react"
 import { useTranslation } from "react-i18next"
 
 interface Props {
   selectedCount: number
   onClearSelection: () => void
   onBulkDelete: () => void
+  /**
+   * Mobile only: the list has no checkbox column, so selection is a mode you enter from here.
+   * Without the toggle the slot keeps the desktop hint about selecting rows.
+   */
+  showSelectionToggle?: boolean
+  selectionMode?: boolean
+  onToggleSelectionMode?: () => void
 }
 
 /**
@@ -13,7 +20,14 @@ interface Props {
  * so the table does not "jump" when it appears/disappears: when empty — shows a hint,
  * when there is a selection — a counter and actions over the selected rows.
  */
-export function TransactionsToolbar({ selectedCount, onClearSelection, onBulkDelete }: Props) {
+export function TransactionsToolbar({
+  selectedCount,
+  onClearSelection,
+  onBulkDelete,
+  showSelectionToggle,
+  selectionMode,
+  onToggleSelectionMode,
+}: Props) {
   const { t } = useTranslation()
   const hasSelection = selectedCount > 0
 
@@ -56,6 +70,16 @@ export function TransactionsToolbar({ selectedCount, onClearSelection, onBulkDel
             {t("common.delete")} {selectedCount}
           </Button>
         </>
+      ) : showSelectionToggle ? (
+        <Button
+          variant="subtle"
+          color="gray"
+          size="compact-sm"
+          leftSection={selectionMode ? <IconCheck size={14} /> : <IconListCheck size={14} />}
+          onClick={onToggleSelectionMode}
+        >
+          {selectionMode ? t("common.done") : t("common.select")}
+        </Button>
       ) : (
         <Text size="sm" c="dimmed">
           {t("transactions.toolbar_hint")}

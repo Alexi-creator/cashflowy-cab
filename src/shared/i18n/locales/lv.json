@@ -147,7 +147,11 @@
     "type_income": "+ Ieņēmumi",
     "tx_count_zero": "{{count}} darījumu",
     "tx_count_one": "{{count}} darījums",
-    "tx_count_other": "{{count}} darījumi"
+    "tx_count_other": "{{count}} darījumi",
+    "today": "Šodien",
+    "yesterday": "Vakar",
+    "select": "Atlasīt",
+    "done": "Gatavs"
   },
   "header": {
     "add": "Pievienot",
@@ -294,7 +298,9 @@
     "tour_add_title": "Pievienot darījumu",
     "tour_add_desc": "Jau iestatīts uz ienākumu/izdevumu — pievienojiet to ar vienu klikšķi.",
     "tour_list_title": "Filtrēšana un meklēšana",
-    "tour_list_desc": "Filtrējiet pēc veida, kategorijas, valūtas vai datuma un meklējiet savus darījumus šeit."
+    "tour_list_desc": "Filtrējiet pēc veida, kategorijas, valūtas vai datuma un meklējiet savus darījumus šeit.",
+    "details_title": "Darījuma detaļas",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorijas",

@@ -146,7 +146,11 @@
     "type_expense": "− Expense",
     "type_income": "+ Income",
     "tx_count_one": "{{count}} transaction",
-    "tx_count_other": "{{count}} transactions"
+    "tx_count_other": "{{count}} transactions",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "select": "Select",
+    "done": "Done"
   },
   "header": {
     "add": "Add",
@@ -312,7 +316,9 @@
     "tour_add_title": "Add a transaction",
     "tour_add_desc": "Already set to income/expense — add one in a click.",
     "tour_list_title": "Filter and search",
-    "tour_list_desc": "Filter by type, category, currency, or date, and search your transactions here."
+    "tour_list_desc": "Filter by type, category, currency, or date, and search your transactions here.",
+    "details_title": "Transaction details",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Categories",

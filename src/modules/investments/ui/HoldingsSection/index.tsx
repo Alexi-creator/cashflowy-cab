@@ -11,7 +11,9 @@ import {
   Table,
   Text,
   Tooltip,
+  useMantineTheme,
 } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { IconEdit, IconInfoCircle, IconPlus, IconTrash } from "@tabler/icons-react"
 import { useTranslation } from "react-i18next"
 import { useModalStore } from "@/shared/store/modalStore"
@@ -21,6 +23,9 @@ import type { Holding } from "../../model"
 import { CoinIcon } from "../CoinIcon"
 import { DeleteHoldingConfirm } from "../DeleteHoldingConfirm"
 import { HoldingForm } from "../HoldingForm"
+import { HoldingsMobileList } from "../HoldingsMobileList"
+
+import classes from "./styles.module.css"
 
 /**
  * Portfolio (holdings) valued with live Bybit spot prices (cached a minute on the
@@ -30,6 +35,13 @@ import { HoldingForm } from "../HoldingForm"
 export function HoldingsSection() {
   const { t, i18n } = useTranslation()
   const open = useModalStore((s) => s.open)
+  const theme = useMantineTheme()
+  // Below `sm` the seven columns don't fit a phone — the portfolio becomes a card list, same
+  // as the journal and the transactions table. Resolved synchronously (no SSR) to avoid
+  // rendering the wrong one first.
+  const isTableView = useMediaQuery(`(min-width: ${theme.breakpoints.sm})`, true, {
+    getInitialValueInEffect: false,
+  })
 
   const { data, isLoading, error } = useHoldings()
 
@@ -92,11 +104,13 @@ export function HoldingsSection() {
         </Group>
       </Paper>
 
-      <Paper>
+      <Paper className={classes.card}>
         {items.length === 0 ? (
           <Text size="sm" c="dimmed" ta="center" py="xl">
             {t("investments.hold_empty")}
           </Text>
+        ) : !isTableView ? (
+          <HoldingsMobileList holdings={items} />
         ) : (
           <Box style={{ overflowX: "auto" }}>
             <Table verticalSpacing="sm" highlightOnHover>

@@ -147,7 +147,11 @@
     "type_income": "+ Доход",
     "tx_count_one": "{{count}} операция",
     "tx_count_few": "{{count}} операции",
-    "tx_count_many": "{{count}} операций"
+    "tx_count_many": "{{count}} операций",
+    "today": "Сегодня",
+    "yesterday": "Вчера",
+    "select": "Выбрать",
+    "done": "Готово"
   },
   "header": {
     "add": "Добавить",
@@ -321,7 +325,9 @@
     "tour_add_title": "Добавить операцию",
     "tour_add_desc": "Тип уже выбран — доход или расход добавляется в один клик.",
     "tour_list_title": "Фильтры и поиск",
-    "tour_list_desc": "Фильтруйте по типу, категории, валюте или дате и ищите операции здесь."
+    "tour_list_desc": "Фильтруйте по типу, категории, валюте или дате и ищите операции здесь.",
+    "details_title": "Детали операции",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Категории",

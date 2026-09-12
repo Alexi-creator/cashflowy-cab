@@ -146,7 +146,11 @@
     "type_expense": "− Meno",
     "type_income": "+ Tulo",
     "tx_count_one": "{{count}} tapahtuma",
-    "tx_count_other": "{{count}} tapahtumaa"
+    "tx_count_other": "{{count}} tapahtumaa",
+    "today": "Tänään",
+    "yesterday": "Eilen",
+    "select": "Valitse",
+    "done": "Valmis"
   },
   "header": {
     "add": "Lisää",
@@ -287,7 +291,9 @@
     "tour_add_title": "Lisää tapahtuma",
     "tour_add_desc": "Jo asetettu tuloksi/menoksi — lisää yhdellä napsautuksella.",
     "tour_list_title": "Suodata ja hae",
-    "tour_list_desc": "Suodata tyypin, kategorian, valuutan tai päivämäärän mukaan ja hae tapahtumiasi täältä."
+    "tour_list_desc": "Suodata tyypin, kategorian, valuutan tai päivämäärän mukaan ja hae tapahtumiasi täältä.",
+    "details_title": "Tapahtuman tiedot",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategoriat",

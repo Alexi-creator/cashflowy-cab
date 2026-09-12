@@ -1,0 +1,21 @@
+/* The card holding the filters + table/list. */
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Below Mantine's `sm` (48em) the card goes full-bleed: Main's `md` padding costs 32px, ~10% of a
+   375px screen, and every one of those pixels is width the list can use. The side borders and the
+   radius go with it — an edge-to-edge card has no visible sides to round.
+   `overflow` also has to open up: the day headers stick to the page scroller (Main), and a clipped
+   card would make them stick inside a box that never scrolls. */
+@media (max-width: 47.99em) {
+  .card {
+    margin-inline: calc(-1 * var(--mantine-spacing-md));
+    border-radius: 0;
+    border-inline: none;
+    overflow: visible;
+  }
+}

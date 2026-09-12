@@ -145,7 +145,11 @@
     "nothing_found": "Không tìm thấy",
     "type_expense": "− Chi tiêu",
     "type_income": "+ Thu nhập",
-    "tx_count_other": "{{count}} giao dịch"
+    "tx_count_other": "{{count}} giao dịch",
+    "today": "Hôm nay",
+    "yesterday": "Hôm qua",
+    "select": "Chọn",
+    "done": "Xong"
   },
   "header": {
     "add": "Thêm",
@@ -280,7 +284,9 @@
     "tour_add_title": "Thêm giao dịch",
     "tour_add_desc": "Đã đặt sẵn là thu nhập/chi phí — thêm chỉ trong một cú nhấp.",
     "tour_list_title": "Lọc và tìm kiếm",
-    "tour_list_desc": "Lọc theo loại, danh mục, tiền tệ hoặc ngày, và tìm kiếm giao dịch của bạn tại đây."
+    "tour_list_desc": "Lọc theo loại, danh mục, tiền tệ hoặc ngày, và tìm kiếm giao dịch của bạn tại đây.",
+    "details_title": "Chi tiết giao dịch",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Danh mục",

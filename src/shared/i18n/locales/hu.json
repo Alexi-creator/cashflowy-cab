@@ -146,7 +146,11 @@
     "type_expense": "− Kiadás",
     "type_income": "+ Bevétel",
     "tx_count_one": "{{count}} tranzakció",
-    "tx_count_other": "{{count}} tranzakció"
+    "tx_count_other": "{{count}} tranzakció",
+    "today": "Ma",
+    "yesterday": "Tegnap",
+    "select": "Kiválasztás",
+    "done": "Kész"
   },
   "header": {
     "add": "Hozzáadás",
@@ -287,7 +291,9 @@
     "tour_add_title": "Tranzakció hozzáadása",
     "tour_add_desc": "Már bevételre/kiadásra van állítva — adjon hozzá egyet egy kattintással.",
     "tour_list_title": "Szűrés és keresés",
-    "tour_list_desc": "Szűrjön típus, kategória, pénznem vagy dátum szerint, és keressen a tranzakciói között itt."
+    "tour_list_desc": "Szűrjön típus, kategória, pénznem vagy dátum szerint, és keressen a tranzakciói között itt.",
+    "details_title": "Tranzakció részletei",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategóriák",

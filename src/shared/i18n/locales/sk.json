@@ -147,7 +147,11 @@
     "type_income": "+ Príjem",
     "tx_count_one": "{{count}} transakcia",
     "tx_count_few": "{{count}} transakcie",
-    "tx_count_other": "{{count}} transakcií"
+    "tx_count_other": "{{count}} transakcií",
+    "today": "Dnes",
+    "yesterday": "Včera",
+    "select": "Vybrať",
+    "done": "Hotovo"
   },
   "header": {
     "add": "Pridať",
@@ -294,7 +298,9 @@
     "tour_add_title": "Pridať transakciu",
     "tour_add_desc": "Už nastavené na príjem/výdavok — pridajte ju jedným kliknutím.",
     "tour_list_title": "Filtrovanie a hľadanie",
-    "tour_list_desc": "Filtrujte podľa typu, kategórie, meny alebo dátumu a vyhľadávajte tu svoje transakcie."
+    "tour_list_desc": "Filtrujte podľa typu, kategórie, meny alebo dátumu a vyhľadávajte tu svoje transakcie.",
+    "details_title": "Podrobnosti transakcie",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategórie",

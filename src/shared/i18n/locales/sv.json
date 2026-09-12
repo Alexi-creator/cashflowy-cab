@@ -146,7 +146,11 @@
     "type_expense": "− Utgift",
     "type_income": "+ Inkomst",
     "tx_count_one": "{{count}} transaktion",
-    "tx_count_other": "{{count}} transaktioner"
+    "tx_count_other": "{{count}} transaktioner",
+    "today": "I dag",
+    "yesterday": "I går",
+    "select": "Välj",
+    "done": "Klar"
   },
   "header": {
     "add": "Lägg till",
@@ -287,7 +291,9 @@
     "tour_add_title": "Lägg till en transaktion",
     "tour_add_desc": "Redan inställd på inkomst/utgift — lägg till en med ett klick.",
     "tour_list_title": "Filtrera och sök",
-    "tour_list_desc": "Filtrera efter typ, kategori, valuta eller datum, och sök i dina transaktioner här."
+    "tour_list_desc": "Filtrera efter typ, kategori, valuta eller datum, och sök i dina transaktioner här.",
+    "details_title": "Transaktionsdetaljer",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Kategorier",

@@ -146,7 +146,11 @@
     "type_expense": "− Uscita",
     "type_income": "+ Entrata",
     "tx_count_one": "{{count}} transazione",
-    "tx_count_other": "{{count}} transazioni"
+    "tx_count_other": "{{count}} transazioni",
+    "today": "Oggi",
+    "yesterday": "Ieri",
+    "select": "Seleziona",
+    "done": "Fine"
   },
   "header": {
     "add": "Aggiungi",
@@ -287,7 +291,9 @@
     "tour_add_title": "Aggiungi una transazione",
     "tour_add_desc": "Già impostata su entrata/spesa — aggiungine una con un clic.",
     "tour_list_title": "Filtra e cerca",
-    "tour_list_desc": "Filtra per tipo, categoria, valuta o data, e cerca qui le tue transazioni."
+    "tour_list_desc": "Filtra per tipo, categoria, valuta o data, e cerca qui le tue transazioni.",
+    "details_title": "Dettaglio della transazione",
+    "page_indicator": "{{page}} / {{total}}"
   },
   "categories": {
     "title": "Categorie",
